@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4791937B22AA83D400EA30E4 /* StationSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791937A22AA83D400EA30E4 /* StationSearchService.swift */; };
+		4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791937D22AA854C00EA30E4 /* LocationManager.swift */; };
 		4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794CB7B22AA81930065091F /* AppDelegate.swift */; };
 		4794CB7E22AA81930065091F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794CB7D22AA81930065091F /* SceneDelegate.swift */; };
 		4794CB8022AA81930065091F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794CB7F22AA81930065091F /* ContentView.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4791937A22AA83D400EA30E4 /* StationSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchService.swift; sourceTree = "<group>"; };
+		4791937D22AA854C00EA30E4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4794CB7822AA81930065091F /* Station Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Station Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4794CB7B22AA81930065091F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4794CB7D22AA81930065091F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +62,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4791937922AA83BE00EA30E4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4791937A22AA83D400EA30E4 /* StationSearchService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4791937C22AA854100EA30E4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4791937D22AA854C00EA30E4 /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		4794CB6F22AA81930065091F = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +99,8 @@
 		4794CB7A22AA81930065091F /* Station Notifier */ = {
 			isa = PBXGroup;
 			children = (
+				4791937C22AA854100EA30E4 /* Managers */,
+				4791937922AA83BE00EA30E4 /* Services */,
 				4794CB7B22AA81930065091F /* AppDelegate.swift */,
 				4794CB7D22AA81930065091F /* SceneDelegate.swift */,
 				4794CB7F22AA81930065091F /* ContentView.swift */,
@@ -210,6 +232,8 @@
 			files = (
 				4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */,
 				4794CB7E22AA81930065091F /* SceneDelegate.swift in Sources */,
+				4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */,
+				4791937B22AA83D400EA30E4 /* StationSearchService.swift in Sources */,
 				4794CB8022AA81930065091F /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
