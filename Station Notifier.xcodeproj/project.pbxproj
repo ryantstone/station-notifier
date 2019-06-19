@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47817F7A22B3C3A000C82FEA /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47817F7922B3C3A000C82FEA /* AppState.swift */; };
 		4791937B22AA83D400EA30E4 /* StationSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791937A22AA83D400EA30E4 /* StationSearchService.swift */; };
 		4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791937D22AA854C00EA30E4 /* LocationManager.swift */; };
 		4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794CB7B22AA81930065091F /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47817F7922B3C3A000C82FEA /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		4791937A22AA83D400EA30E4 /* StationSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchService.swift; sourceTree = "<group>"; };
 		4791937D22AA854C00EA30E4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4794CB7822AA81930065091F /* Station Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Station Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				4794CB8622AA81950065091F /* LaunchScreen.storyboard */,
 				4794CB8922AA81950065091F /* Info.plist */,
 				4794CB8322AA81950065091F /* Preview Content */,
+				47817F7922B3C3A000C82FEA /* AppState.swift */,
 			);
 			path = "Station Notifier";
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */,
 				4794CB7E22AA81930065091F /* SceneDelegate.swift in Sources */,
 				4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */,
+				47817F7A22B3C3A000C82FEA /* AppState.swift in Sources */,
 				4791937B22AA83D400EA30E4 /* StationSearchService.swift in Sources */,
 				4794CB8022AA81930065091F /* ContentView.swift in Sources */,
 			);

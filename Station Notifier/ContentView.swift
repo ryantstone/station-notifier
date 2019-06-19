@@ -7,10 +7,14 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView : View {
+
+    var appState = AppState()
+
     var body: some View {
-        Text("Hello World")
+        Text(appState[\.location])
     }
 }
 

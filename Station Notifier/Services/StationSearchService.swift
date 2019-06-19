@@ -10,7 +10,7 @@ class StationSearchService {
 
     private func buildSearchQuery() {
         let searchRequest = MKLocalSearch.Request()
-        LocationManager.shared.
+//        LocationManager.shared.
     }
 }
 
