@@ -10,11 +10,13 @@ import SwiftUI
 import Combine
 import MapKit
 
-class AppState: BindableObject {
+final class AppState: BindableObject {
     var didChange = PassthroughSubject<AppState, Never>()
     var location = LocationManager.shared.currentLocation {
         didSet {
             didChange.send(self)
         }
     }
+    
+    init() {}
 }

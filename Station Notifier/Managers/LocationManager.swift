@@ -6,7 +6,7 @@ class LocationManager: NSObject {
     static let shared = LocationManager()
 
     let manager = CLLocationManager()
-    @Published var currentLocation = PassthroughSubject<CLLocation, Error>()
+    var currentLocation = CurrentValueSubject<CLLocation, Error>(CLLocation(latitude: 0, longitude: 0))
 
     typealias locationManagerCompletion = (CLLocation) -> ()
 
@@ -23,12 +23,13 @@ class LocationManager: NSObject {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
                 manager.requestWhenInUseAuthorization()
+                manager.requestLocation()
             case .authorizedWhenInUse, .authorizedAlways:
                 manager.requestLocation()
-            case .restricted:
-                currentLocation.send(completion: .failure(LocationError.restricted))
-            case .denied:
-                currentLocation.send(completion: .failure(LocationError.denied))
+            case .restricted: ()
+//                currentLocation.send(completion: .failure(LocationError.restricted))
+            case .denied: ()
+//                currentLocation.send(completion: .failure(LocationError.denied))
                 // FIXME: Add some sort of pop up notifying that the app won' t work
                 print("Location restricted/denied")
             @unknown default:
@@ -48,4 +49,9 @@ extension LocationManager: CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         currentLocation.send(location)
     }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }
+

@@ -8,13 +8,23 @@
 
 import SwiftUI
 import Combine
+import MapKit
 
 struct ContentView : View {
 
-    var appState = AppState()
-
+    @EnvironmentObject var appState: AppState
+    
+    var location: String {
+        appState.location
+            .map { "\($0.coordinate.longitude) \($0.coordinate.latitude)" }
+            .replaceEmpty(with: "Invalid Location")
+            .output
+    }
+   
+    
+    
     var body: some View {
-        Text(appState[\.location])
+        Text(location)
     }
 }
 
