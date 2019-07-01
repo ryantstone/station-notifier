@@ -7,8 +7,7 @@ class LocationManager: NSObject {
     static let shared = LocationManager()
 
     let manager = CLLocationManager()
-    let currentLocation = Publisher<CLLocation>()
-
+    var currentLocation = PassthroughSubject<CLLocation, Error>()
     typealias locationManagerCompletion = (CLLocation) -> ()
 
     override init() {
@@ -24,9 +23,9 @@ class LocationManager: NSObject {
             case .notDetermined:
                 manager.requestWhenInUseAuthorization()
             case .authorizedWhenInUse, .authorizedAlways:
-                manager.requestLocation()
+                manager.startUpdatingLocation()
             case .restricted, .denied:
-                // FIXME: Add some sort of pop up notifying that the app won' t work
+                currentLocation.send(completion: Subscribers.Completion<Error>.failure(LocationError.permissionDenied))
                 print("Location restricted/denied")
             @unknown default:
                fatalError("Unkown new state")
@@ -35,19 +34,14 @@ class LocationManager: NSObject {
     }
 }
 
+enum LocationError: Error {
+    case permissionDenied
+}
+
 // MARK: - Location Manager Delegate
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-
-    }
-}
-
-struct CurrentLocation: Publisher {
-    public typealias Failure = Error
-    public typealias Output =  CLLocation
-
-    public func receive<S>(on scheduler: S, options: S.SchedulerOptions? = nil) -> Publishers.ReceiveOn<CurrentLocation, S> where S : Scheduler {
-        <#code#>
+        self.currentLocation.send(location)
     }
 }

@@ -388,6 +388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Station Notifier\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = FV9NULGJG4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Station Notifier/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -407,6 +408,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Station Notifier\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = FV9NULGJG4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Station Notifier/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
