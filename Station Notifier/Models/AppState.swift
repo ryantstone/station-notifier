@@ -1,9 +1,13 @@
-//
-//  AppState.swift
-//  Station Notifier
-//
-//  Created by Ryan Stone on 6/30/19.
-//  Copyright © 2019 Ryan Stone. All rights reserved.
-//
+import SwiftUI
+import Combine
+import CoreLocation
 
-import Foundation
+class AppState: BindableObject {
+    var didChange = PassthroughSubject<Void, Never>()
+    let locationManager = LocationManager()
+    var currentLocation: PassthroughSubject<CLLocation, Error> { locationManager.currentLocation
+    }
+    var location: CLLocation {
+        locationManager.location
+    }
+}

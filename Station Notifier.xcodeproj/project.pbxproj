@@ -16,6 +16,7 @@
 		4794CB8522AA81950065091F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4794CB8422AA81950065091F /* Preview Assets.xcassets */; };
 		4794CB8822AA81950065091F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4794CB8622AA81950065091F /* LaunchScreen.storyboard */; };
 		4794CB9322AA81950065091F /* Station_NotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794CB9222AA81950065091F /* Station_NotifierTests.swift */; };
+		7C480D5D22C98FB3005A10F6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C480D5C22C98FB3005A10F6 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		4794CB8E22AA81950065091F /* Station NotifierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Station NotifierTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4794CB9222AA81950065091F /* Station_NotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station_NotifierTests.swift; sourceTree = "<group>"; };
 		4794CB9422AA81950065091F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C480D5C22C98FB3005A10F6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		4794CB7A22AA81930065091F /* Station Notifier */ = {
 			isa = PBXGroup;
 			children = (
+				7C480D5B22C98F9F005A10F6 /* Models */,
 				4791937C22AA854100EA30E4 /* Managers */,
 				4791937922AA83BE00EA30E4 /* Services */,
 				4794CB7B22AA81930065091F /* AppDelegate.swift */,
@@ -127,6 +130,14 @@
 				4794CB9422AA81950065091F /* Info.plist */,
 			);
 			path = "Station NotifierTests";
+			sourceTree = "<group>";
+		};
+		7C480D5B22C98F9F005A10F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7C480D5C22C98FB3005A10F6 /* AppState.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 				4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */,
 				4794CB7E22AA81930065091F /* SceneDelegate.swift in Sources */,
 				4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */,
+				7C480D5D22C98FB3005A10F6 /* AppState.swift in Sources */,
 				4791937B22AA83D400EA30E4 /* StationSearchService.swift in Sources */,
 				4794CB8022AA81930065091F /* ContentView.swift in Sources */,
 			);

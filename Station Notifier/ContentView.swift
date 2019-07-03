@@ -7,17 +7,32 @@
 //
 
 import SwiftUI
+import Combine
+import CoreLocation
 
 struct ContentView : View {
+    
+    @ObjectBinding var state: AppState
+    var loc: String = "Location Unavailable"
+    var location: AnyPublisher<String, Never> {
+        state.currentLocation
+            .removeDuplicates()
+            .map({ return "\($0.coordinate.longitude), \($0.coordinate.latitude)" })
+            .replaceError(with: "Location Unavailable")
+            .eraseToAnyPublisher()
+    }
+    
     var body: some View {
-        Text("Hello World")
+        HStack {
+            Text(loc)
+        }
     }
 }
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(state: AppState())
     }
 }
 #endif

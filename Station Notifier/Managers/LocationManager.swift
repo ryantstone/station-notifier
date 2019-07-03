@@ -8,6 +8,7 @@ class LocationManager: NSObject {
 
     let manager = CLLocationManager()
     var currentLocation = PassthroughSubject<CLLocation, Error>()
+    @Published var location: CLLocation = CLLocation(latitude: 0, longitude: 0)
     typealias locationManagerCompletion = (CLLocation) -> ()
 
     override init() {
@@ -15,9 +16,10 @@ class LocationManager: NSObject {
         manager.delegate = self
         manager.distanceFilter = kCLDistanceFilterNone
         manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        getCurrentLocation()
     }
 
-    func getCurrentLocation(completion: locationManagerCompletion) {
+    func getCurrentLocation() {
         if  CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
