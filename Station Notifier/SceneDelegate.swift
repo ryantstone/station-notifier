@@ -5,15 +5,15 @@ import SwiftUIFlux
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let store = Store(reducer: appStateReducer,
+    var appState = AppState()
+    lazy var store = Store<AppState>(reducer: appStateReducer,
                       middleware: [],
-                      state: AppState(),
+                      state: appState,
                       queue: .main)
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let contentVM = ContentViewModel(state: state)
-        window.rootViewController = UIHostingController(rootView: ContentView(viewModel: contentVM))
+        window.rootViewController = UIHostingController(rootView: ContentView(appState: appState))
         self.window = window
         window.makeKeyAndVisible()
     }

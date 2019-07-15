@@ -4,11 +4,11 @@ import CoreLocation
 
 struct ContentView : View {
     
-    @State 
+    @ObjectBinding var appState: AppState
     
     var body: some View {
         HStack {
-            Text("Foo")
+            Text("\(appState.locationState.latitude)")
         }
     }
 }
