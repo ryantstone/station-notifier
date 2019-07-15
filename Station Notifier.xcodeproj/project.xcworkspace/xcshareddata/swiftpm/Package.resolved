@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftUIFlux",
+        "repositoryURL": "git@github.com:Dimillian/SwiftUIFlux.git",
+        "state": {
+          "branch": null,
+          "revision": "3d3a984c140b5277b58686054a5ec953543cd7ab",
+          "version": "0.3.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

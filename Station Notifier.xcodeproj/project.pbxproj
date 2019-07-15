@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,12 @@
 		4794CB8522AA81950065091F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4794CB8422AA81950065091F /* Preview Assets.xcassets */; };
 		4794CB8822AA81950065091F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4794CB8622AA81950065091F /* LaunchScreen.storyboard */; };
 		4794CB9322AA81950065091F /* Station_NotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794CB9222AA81950065091F /* Station_NotifierTests.swift */; };
-		7C480D5D22C98FB3005A10F6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C480D5C22C98FB3005A10F6 /* AppState.swift */; };
+		7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C43D43B22D5E819008AC918 /* ContentViewModel.swift */; };
+		7C45170222D95F210073E398 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45170122D95F210073E398 /* AppState.swift */; };
+		7C45170422D95F430073E398 /* LocationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45170322D95F430073E398 /* LocationState.swift */; };
+		7C45170A22D961AF0073E398 /* SwiftUIFlux in Frameworks */ = {isa = PBXBuildFile; productRef = 7C45170922D961AF0073E398 /* SwiftUIFlux */; };
+		7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5022DC078F002E215F /* AppReducer.swift */; };
+		7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5222DC08A0002E215F /* LocationReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +48,11 @@
 		4794CB8E22AA81950065091F /* Station NotifierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Station NotifierTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4794CB9222AA81950065091F /* Station_NotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station_NotifierTests.swift; sourceTree = "<group>"; };
 		4794CB9422AA81950065091F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C480D5C22C98FB3005A10F6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		7C43D43B22D5E819008AC918 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		7C45170122D95F210073E398 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		7C45170322D95F430073E398 /* LocationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationState.swift; sourceTree = "<group>"; };
+		7CAB9D5022DC078F002E215F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		7CAB9D5222DC08A0002E215F /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C45170A22D961AF0073E398 /* SwiftUIFlux in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +111,7 @@
 		4794CB7A22AA81930065091F /* Station Notifier */ = {
 			isa = PBXGroup;
 			children = (
+				7C45170022D95F0F0073E398 /* Flux */,
 				7C480D5B22C98F9F005A10F6 /* Models */,
 				4791937C22AA854100EA30E4 /* Managers */,
 				4791937922AA83BE00EA30E4 /* Services */,
@@ -132,12 +143,39 @@
 			path = "Station NotifierTests";
 			sourceTree = "<group>";
 		};
+		7C45170022D95F0F0073E398 /* Flux */ = {
+			isa = PBXGroup;
+			children = (
+				7CAB9D4F22DC0778002E215F /* Reducers */,
+				7CAB9D4E22DC076F002E215F /* State */,
+			);
+			path = Flux;
+			sourceTree = "<group>";
+		};
 		7C480D5B22C98F9F005A10F6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7C480D5C22C98FB3005A10F6 /* AppState.swift */,
+				7C43D43B22D5E819008AC918 /* ContentViewModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7CAB9D4E22DC076F002E215F /* State */ = {
+			isa = PBXGroup;
+			children = (
+				7C45170322D95F430073E398 /* LocationState.swift */,
+				7C45170122D95F210073E398 /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		7CAB9D4F22DC0778002E215F /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				7CAB9D5022DC078F002E215F /* AppReducer.swift */,
+				7CAB9D5222DC08A0002E215F /* LocationReducer.swift */,
+			);
+			path = Reducers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +194,9 @@
 			dependencies = (
 			);
 			name = "Station Notifier";
+			packageProductDependencies = (
+				7C45170922D961AF0073E398 /* SwiftUIFlux */,
+			);
 			productName = "Station Notifier";
 			productReference = 4794CB7822AA81930065091F /* Station Notifier.app */;
 			productType = "com.apple.product-type.application";
@@ -206,6 +247,9 @@
 				Base,
 			);
 			mainGroup = 4794CB6F22AA81930065091F;
+			packageReferences = (
+				7C45170822D961AF0073E398 /* XCRemoteSwiftPackageReference "SwiftUIFlux" */,
+			);
 			productRefGroup = 4794CB7922AA81930065091F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -241,10 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */,
+				7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */,
 				4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */,
 				4794CB7E22AA81930065091F /* SceneDelegate.swift in Sources */,
+				7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */,
+				7C45170222D95F210073E398 /* AppState.swift in Sources */,
+				7C45170422D95F430073E398 /* LocationState.swift in Sources */,
 				4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */,
-				7C480D5D22C98FB3005A10F6 /* AppState.swift in Sources */,
 				4791937B22AA83D400EA30E4 /* StationSearchService.swift in Sources */,
 				4794CB8022AA81930065091F /* ContentView.swift in Sources */,
 			);
@@ -505,6 +553,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C45170822D961AF0073E398 /* XCRemoteSwiftPackageReference "SwiftUIFlux" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:Dimillian/SwiftUIFlux.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C45170922D961AF0073E398 /* SwiftUIFlux */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C45170822D961AF0073E398 /* XCRemoteSwiftPackageReference "SwiftUIFlux" */;
+			productName = SwiftUIFlux;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4794CB7022AA81930065091F /* Project object */;
 }
