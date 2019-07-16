@@ -8,8 +8,6 @@ class LocationManager: NSObject {
 
     let manager = CLLocationManager()
     var currentLocation = PassthroughSubject<CLLocation, Error>()
-    @Published var location: CLLocation = CLLocation(latitude: 0, longitude: 0)
-    typealias locationManagerCompletion = (CLLocation) -> ()
 
     override init() {
         super.init()

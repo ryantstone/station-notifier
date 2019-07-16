@@ -22,6 +22,7 @@
 		7C45170A22D961AF0073E398 /* SwiftUIFlux in Frameworks */ = {isa = PBXBuildFile; productRef = 7C45170922D961AF0073E398 /* SwiftUIFlux */; };
 		7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5022DC078F002E215F /* AppReducer.swift */; };
 		7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5222DC08A0002E215F /* LocationReducer.swift */; };
+		7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5422DC8183002E215F /* CreateStartStation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7C45170322D95F430073E398 /* LocationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationState.swift; sourceTree = "<group>"; };
 		7CAB9D5022DC078F002E215F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5222DC08A0002E215F /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
+		7CAB9D5422DC8183002E215F /* CreateStartStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStartStation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				7CAB9D4F22DC0778002E215F /* Reducers */,
 				7CAB9D4E22DC076F002E215F /* State */,
+				7CAB9D5422DC8183002E215F /* CreateStartStation.swift */,
 			);
 			path = Flux;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */,
 				7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */,
 				4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */,
+				7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */,
 				4794CB7E22AA81930065091F /* SceneDelegate.swift in Sources */,
 				7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */,
 				7C45170222D95F210073E398 /* AppState.swift in Sources */,
