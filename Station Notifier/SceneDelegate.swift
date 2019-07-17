@@ -28,3 +28,7 @@ let store = Store<AppState>(reducer: appStateReducer,
                                  middleware: [],
                                  state: AppState(),
                                  queue: .main)
+
+#if DEBUG
+//    let
+#endif

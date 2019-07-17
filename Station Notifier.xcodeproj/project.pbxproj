@@ -23,6 +23,7 @@
 		7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5022DC078F002E215F /* AppReducer.swift */; };
 		7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5222DC08A0002E215F /* LocationReducer.swift */; };
 		7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5422DC8183002E215F /* CreateStartStation.swift */; };
+		7CB6754922DEA99D0095E04B /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB6754822DEA99D0095E04B /* SearchField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		7CAB9D5022DC078F002E215F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5222DC08A0002E215F /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5422DC8183002E215F /* CreateStartStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStartStation.swift; sourceTree = "<group>"; };
+		7CB6754822DEA99D0095E04B /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		4794CB7A22AA81930065091F /* Station Notifier */ = {
 			isa = PBXGroup;
 			children = (
+				7CB6754622DEA9600095E04B /* Views */,
 				7C45170022D95F0F0073E398 /* Flux */,
 				7C480D5B22C98F9F005A10F6 /* Models */,
 				4791937C22AA854100EA30E4 /* Managers */,
@@ -179,6 +182,22 @@
 				7CAB9D5222DC08A0002E215F /* LocationReducer.swift */,
 			);
 			path = Reducers;
+			sourceTree = "<group>";
+		};
+		7CB6754622DEA9600095E04B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7CB6754722DEA9870095E04B /* Shared */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7CB6754722DEA9870095E04B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7CB6754822DEA99D0095E04B /* SearchField.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +313,7 @@
 				7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */,
 				4794CB7E22AA81930065091F /* SceneDelegate.swift in Sources */,
 				7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */,
+				7CB6754922DEA99D0095E04B /* SearchField.swift in Sources */,
 				7C45170222D95F210073E398 /* AppState.swift in Sources */,
 				7C45170422D95F430073E398 /* LocationState.swift in Sources */,
 				4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */,

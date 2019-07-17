@@ -1,0 +1,46 @@
+import SwiftUI
+import Combine
+
+struct SearchField : View {
+
+    @ObjectBinding var searchWrapper: SearchWrapper
+    let placeHolder: String
+
+    var body: some View {
+        return HStack(alignment: .center, spacing: 0) {
+            TextField(placeHolder, text: $searchWrapper.searchText)
+                .textFieldStyle(.roundedBorder)
+                .padding(.leading)
+                .padding(.trailing)
+        }
+    }
+}
+
+#if DEBUG
+struct SearchField_Previews : PreviewProvider {
+    static var previews: some View {
+        SearchField(searchWrapper: SearchWrapper(),
+                    placeHolder: "Search Text")
+    }
+}
+#endif
+
+class SearchWrapper: BindableObject {
+    var didChange = PassthroughSubject<SearchWrapper, Never>()
+    @Published var searchText = ""
+    private var cancellableSubscriber: Cancellable?
+    
+    init() {
+        cancellableSubscriber = didChange
+            .eraseToAnyPublisher()
+            .map { $0.$$searchText.value }
+            .debounce(for: .milliseconds(500), scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .filter { !$0.isEmpty }
+            .sink(receiveValue: { value in
+                DispatchQueue.main.async {
+                    self.searchText = value
+                }
+            })
+    }
+}
