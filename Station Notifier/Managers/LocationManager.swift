@@ -48,6 +48,7 @@ extension LocationManager: CLLocationManagerDelegate {
         store.dispatch(action: AddLocationAction(location: location))
         
         let req = MKLocalSearch.Request()
+        req.naturalLanguageQuery = "tri-rail"
         req.pointOfInterestFilter = MKPointOfInterestFilter(including: [.publicTransport])
         
         MKLocalSearch(request: req).start { (response, error) in

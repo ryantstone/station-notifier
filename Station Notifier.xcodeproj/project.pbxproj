@@ -16,6 +16,7 @@
 		4794CB8522AA81950065091F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4794CB8422AA81950065091F /* Preview Assets.xcassets */; };
 		4794CB8822AA81950065091F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4794CB8622AA81950065091F /* LaunchScreen.storyboard */; };
 		4794CB9322AA81950065091F /* Station_NotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794CB9222AA81950065091F /* Station_NotifierTests.swift */; };
+		47A88E4B22DF40D5009E4CAF /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A88E4A22DF40D5009E4CAF /* StationList.swift */; };
 		7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C43D43B22D5E819008AC918 /* ContentViewModel.swift */; };
 		7C45170222D95F210073E398 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45170122D95F210073E398 /* AppState.swift */; };
 		7C45170422D95F430073E398 /* LocationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45170322D95F430073E398 /* LocationState.swift */; };
@@ -50,6 +51,7 @@
 		4794CB8E22AA81950065091F /* Station NotifierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Station NotifierTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4794CB9222AA81950065091F /* Station_NotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station_NotifierTests.swift; sourceTree = "<group>"; };
 		4794CB9422AA81950065091F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47A88E4A22DF40D5009E4CAF /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationList.swift; sourceTree = "<group>"; };
 		7C43D43B22D5E819008AC918 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		7C45170122D95F210073E398 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		7C45170322D95F430073E398 /* LocationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationState.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				7CB6754722DEA9870095E04B /* Shared */,
+				47A88E4A22DF40D5009E4CAF /* StationList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */,
 				4791937B22AA83D400EA30E4 /* StationSearchService.swift in Sources */,
 				4794CB8022AA81930065091F /* ContentView.swift in Sources */,
+				47A88E4B22DF40D5009E4CAF /* StationList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

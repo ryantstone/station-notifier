@@ -8,7 +8,7 @@ struct SearchField : View {
 
     var body: some View {
         return HStack(alignment: .center, spacing: 0) {
-            TextField(placeHolder, text: $searchWrapper.searchText)
+            TextField($searchWrapper.searchText, placeholder: Text(verbatim: placeHolder))
                 .textFieldStyle(.roundedBorder)
                 .padding(.leading)
                 .padding(.trailing)
@@ -16,14 +16,14 @@ struct SearchField : View {
     }
 }
 
-#if DEBUG
-struct SearchField_Previews : PreviewProvider {
-    static var previews: some View {
-        SearchField(searchWrapper: SearchWrapper(),
-                    placeHolder: "Search Text")
-    }
-}
-#endif
+//#if DEBUG
+//struct SearchField_Previews : PreviewProvider {
+//    static var previews: some View {
+////        SearchField(searchWrapper: SearchWrapper(),
+////                    placeHolder: "Search Text")
+//    }
+//}
+//#endif
 
 class SearchWrapper: BindableObject {
     var didChange = PassthroughSubject<SearchWrapper, Never>()
@@ -33,7 +33,7 @@ class SearchWrapper: BindableObject {
     init() {
         cancellableSubscriber = didChange
             .eraseToAnyPublisher()
-            .map { $0.$$searchText.value }
+            .map { $0.$searchText.value }
             .debounce(for: .milliseconds(500), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .filter { !$0.isEmpty }
