@@ -1,21 +1,24 @@
 import Foundation
 import CoreLocation
 import Combine
+import SwiftUIFlux
 
 class LocationManager: NSObject {
 
-    static let shared = LocationManager()
-
     let manager = CLLocationManager()
-    var currentLocation = PassthroughSubject<CLLocation, Error>()
+    var store: Store<AppState>
 
-    override init() {
-        super.init()
-        manager.delegate = self
+    init(store: Store<AppState>) {
         manager.distanceFilter = kCLDistanceFilterNone
         manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        self.store = store
+
+        super.init()
+
+        manager.delegate = self
         getCurrentLocation()
     }
+
 
     func getCurrentLocation() {
         if  CLLocationManager.locationServicesEnabled() {
@@ -25,7 +28,6 @@ class LocationManager: NSObject {
             case .authorizedWhenInUse, .authorizedAlways:
                 manager.startUpdatingLocation()
             case .restricted, .denied:
-                currentLocation.send(completion: Subscribers.Completion<Error>.failure(LocationError.permissionDenied))
                 print("Location restricted/denied")
             @unknown default:
                fatalError("Unkown new state")
@@ -42,6 +44,10 @@ enum LocationError: Error {
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        self.currentLocation.send(location)
+        store.dispatch(action: AddLocationAction(location: location))
     }
+}
+
+struct AddLocationAction: Action {
+    let location: CLLocation
 }

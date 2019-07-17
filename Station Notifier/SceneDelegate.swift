@@ -5,15 +5,13 @@ import SwiftUIFlux
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var appState = AppState()
-    lazy var store = Store<AppState>(reducer: appStateReducer,
-                      middleware: [],
-                      state: appState,
-                      queue: .main)
 
+    lazy var locationManager = LocationManager(store: store)
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UIHostingController(rootView: ContentView(appState: appState))
+        window.rootViewController = UIHostingController(rootView: ContentView().environmentObject(store))
+        _ = locationManager
         self.window = window
         window.makeKeyAndVisible()
     }
@@ -25,3 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) { }
     func sceneDidEnterBackground(_ scene: UIScene) { }
 }
+
+let store = Store<AppState>(reducer: appStateReducer,
+                                 middleware: [],
+                                 state: AppState(),
+                                 queue: .main)
