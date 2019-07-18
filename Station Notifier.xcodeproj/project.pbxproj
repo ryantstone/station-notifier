@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4742F61022DFC94F00863C6E /* StationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742F60F22DFC94F00863C6E /* StationState.swift */; };
+		4742F61322DFCA1E00863C6E /* StationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742F61222DFCA1E00863C6E /* StationActions.swift */; };
+		4742F61522DFCA8600863C6E /* StationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742F61422DFCA8600863C6E /* StationReducer.swift */; };
 		4791937B22AA83D400EA30E4 /* StationSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791937A22AA83D400EA30E4 /* StationSearchService.swift */; };
 		4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791937D22AA854C00EA30E4 /* LocationManager.swift */; };
 		4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794CB7B22AA81930065091F /* AppDelegate.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4742F60F22DFC94F00863C6E /* StationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationState.swift; sourceTree = "<group>"; };
+		4742F61222DFCA1E00863C6E /* StationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationActions.swift; sourceTree = "<group>"; };
+		4742F61422DFCA8600863C6E /* StationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationReducer.swift; sourceTree = "<group>"; };
 		4791937A22AA83D400EA30E4 /* StationSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchService.swift; sourceTree = "<group>"; };
 		4791937D22AA854C00EA30E4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4794CB7822AA81930065091F /* Station Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Station Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4742F61122DFCA0C00863C6E /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				4742F61222DFCA1E00863C6E /* StationActions.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		4791937922AA83BE00EA30E4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +167,7 @@
 		7C45170022D95F0F0073E398 /* Flux */ = {
 			isa = PBXGroup;
 			children = (
+				4742F61122DFCA0C00863C6E /* Actions */,
 				7CAB9D4F22DC0778002E215F /* Reducers */,
 				7CAB9D4E22DC076F002E215F /* State */,
 				7CAB9D5422DC8183002E215F /* CreateStartStation.swift */,
@@ -173,6 +188,7 @@
 			children = (
 				7C45170322D95F430073E398 /* LocationState.swift */,
 				7C45170122D95F210073E398 /* AppState.swift */,
+				4742F60F22DFC94F00863C6E /* StationState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -182,6 +198,7 @@
 			children = (
 				7CAB9D5022DC078F002E215F /* AppReducer.swift */,
 				7CAB9D5222DC08A0002E215F /* LocationReducer.swift */,
+				4742F61422DFCA8600863C6E /* StationReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -310,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4742F61322DFCA1E00863C6E /* StationActions.swift in Sources */,
 				7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */,
 				7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */,
 				4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */,
@@ -320,6 +338,8 @@
 				7C45170222D95F210073E398 /* AppState.swift in Sources */,
 				7C45170422D95F430073E398 /* LocationState.swift in Sources */,
 				4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */,
+				4742F61522DFCA8600863C6E /* StationReducer.swift in Sources */,
+				4742F61022DFC94F00863C6E /* StationState.swift in Sources */,
 				4791937B22AA83D400EA30E4 /* StationSearchService.swift in Sources */,
 				4794CB8022AA81930065091F /* ContentView.swift in Sources */,
 				47A88E4B22DF40D5009E4CAF /* StationList.swift in Sources */,
