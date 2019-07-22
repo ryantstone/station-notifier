@@ -15,7 +15,7 @@ struct StationPickerView: View {
                 TitledView(title: "End", subTitle: "Select Station", tapAction: {})
             }
             List(stationList) { station in
-                StationListCell(station: station)
+                StationListCell(station: station, tripPoint: .start(station))
             }
         }
     }
