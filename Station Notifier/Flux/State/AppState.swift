@@ -1,16 +1,15 @@
 import SwiftUI
-import SwiftUIFlux
 import Combine
 
 class AppState: FluxState, BindableObject {
 
-    var didChange = PassthroughSubject<Void, Never>()
+    var willChange = PassthroughSubject<Void, Never>()
 
-    var locationState: LocationState {
-        didSet { didChange.send() }
-    }
+    var stationState: StationState      { didSet { willChange.send() } }
+    var locationState: LocationState    { didSet { willChange.send() } }
     
     init() {
-        locationState = LocationState()
+        locationState   = LocationState()
+        stationState    = StationState()
     }
 }

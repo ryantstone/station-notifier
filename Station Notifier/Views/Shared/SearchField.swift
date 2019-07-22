@@ -26,14 +26,14 @@ struct SearchField : View {
 //#endif
 
 class SearchWrapper: BindableObject {
-    var didChange = PassthroughSubject<SearchWrapper, Never>()
+    var willChange = PassthroughSubject<SearchWrapper, Never>()
     @Published var searchText = ""
     private var cancellableSubscriber: Cancellable?
     
     init() {
-        cancellableSubscriber = didChange
+        cancellableSubscriber = willChange
             .eraseToAnyPublisher()
-            .map { $0.$searchText.value }
+            .map { $0.searchText }
             .debounce(for: .milliseconds(500), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .filter { !$0.isEmpty }

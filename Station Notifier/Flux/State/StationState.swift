@@ -3,9 +3,9 @@ import Combine
 import MapKit
 
 class StationState {
-    var stationList = [MKMapItem]()
+    var stationList = [Station]()
 
-    func set(stations: [MKMapItem]) {
+    func set(stations: [Station]) {
         self.stationList = stations
     }
 }

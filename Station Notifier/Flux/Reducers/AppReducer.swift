@@ -1,5 +1,4 @@
 import Foundation
-import SwiftUIFlux
 
 func appStateReducer(state: AppState, action: Action) -> AppState {
     var state = state

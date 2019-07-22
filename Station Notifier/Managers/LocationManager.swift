@@ -1,7 +1,6 @@
 import Foundation
 import CoreLocation
 import Combine
-import SwiftUIFlux
 import MapKit
 
 class LocationManager: NSObject {
@@ -46,19 +45,6 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         store.dispatch(action: AddLocationAction(location: location))
-        
-        let req = MKLocalSearch.Request()
-        req.naturalLanguageQuery = "tri-rail"
-        req.pointOfInterestFilter = MKPointOfInterestFilter(including: [.publicTransport])
-        
-        MKLocalSearch(request: req).start { (response, error) in
-            guard error == nil else {
-                print(error)
-                return
-            }
-            
-            print(response.map { $0.mapItems.map { $0.name } })
-        }
     }
 }
 

@@ -1,6 +1,5 @@
 import UIKit
 import SwiftUI
-import SwiftUIFlux
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -9,11 +8,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     lazy var locationManager = LocationManager(store: store)
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UIHostingController(rootView: ContentView().environmentObject(store))
-        _ = locationManager
-        self.window = window
-        window.makeKeyAndVisible()
+        if let windowScene = scene as? UIWindowScene {
+            let window                  = UIWindow(windowScene: windowScene)
+            window.rootViewController   = UIHostingController(rootView: ContentView().environmentObject(store))
+            self.window                 = window
+            window.makeKeyAndVisible()
+        }
     }
 
     
@@ -30,5 +30,9 @@ let store = Store<AppState>(reducer: appStateReducer,
                                  queue: .main)
 
 #if DEBUG
-//    let
+let sampleStore = Store<AppState>(reducer: appStateReducer,
+                                  middleware: [],
+                                  state: AppState(),
+                                  queue: .main)
+
 #endif

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Station_Notifier
+
 
 class Station_NotifierTests: XCTestCase {
 

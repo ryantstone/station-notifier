@@ -11,11 +11,13 @@ class LocationState {
     private (set) var course: CLLocationDirection   = CLLocationDirection()
 
     func add(location: CLLocation) {
-        self.location = location
-        self.latitude = location.coordinate.latitude
-        self.longitude = location.coordinate.longitude
-        self.timeStamp = location.timestamp
-        self.speed = location.speed
-        self.course = location.course
+        self.location   = location
+        self.latitude   = location.coordinate.latitude
+        self.longitude  = location.coordinate.longitude
+        self.timeStamp  = location.timestamp
+        self.speed      = location.speed
+        self.course     = location.course
     }
 }
+
+
