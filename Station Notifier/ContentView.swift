@@ -11,7 +11,7 @@ struct ContentView : View {
     let wrapper = SearchWrapper()
     
     var body: some View {
-        StationPickerView(startStation: nil, endStation: nil, stationList: stations, trip: Trip())
+        StationPickerView(stationList: stations)
     }
 }
 

@@ -7,7 +7,7 @@ func locationStateReducer(state: LocationState, action: Action) -> LocationState
     case let action as AddLocationAction:
         state.add(location: action.location)
     default:
-        fatalError()
+        ()
     }
 
     return state

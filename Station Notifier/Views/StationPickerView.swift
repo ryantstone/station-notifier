@@ -3,43 +3,51 @@ import SwiftUI
 struct StationPickerView: View {
     
     @EnvironmentObject private var store: Store<AppState>
-    @State var startStation: Station?
-    @State var endStation: Station?
     var stationList: [Station]
-    var trip: Trip
-    
+    @State var currentStationChoice = TripPoint.start
+
     var body: some View {
         VStack {
-            HStack(alignment: .bottom) {
-                TitledView(title: "Start", subTitle: "Select Station", tapAction: {})
-                TitledView(title: "End", subTitle: "Select Station", tapAction: {})
-            }
+            HStack(spacing: 40) {
+                TitledView(title: "Start",
+                           subTitle: "Select Station",
+                           action: { self.didChange(tripPoint: .start) })
+                TitledView(title: "End",
+                           subTitle: "Select Station",
+                           action: { self.didChange(tripPoint: .end) })
+            }.frame(width: UIScreen.main.bounds.width)
             List(stationList) { station in
-                StationListCell(station: station, tripPoint: .start(station))
+                StationListCell(station: station, tripPoint: nil)
+                    .tapAction { self.didSelect(station: station) }
             }
-        }
+        }.onAppear(perform: {
+            self.store.dispatch(action: FetchStationAction())
+        })
     }
     
     // MARK: - Functions
-    private func didTap(tripPoint: TripPoint) {
-        
+    private func didChange(tripPoint: TripPoint) {
+        self.currentStationChoice = tripPoint
+    }
+    
+    private func didSelect(station: Station) {
+        store.dispatch(action: AddTripPoint(station: station,
+                                            tripPoint: currentStationChoice,
+                                            stationList: stationList))
     }
 }
 
 enum TripPoint {
     case
-        start(Station),
-        intermediate(Station),
-        end(Station)
+        start,
+        intermediate,
+        end
 }
 
 #if DEBUG
 struct StationPickerViewPreviews: PreviewProvider {
     static var previews: some View {
-        StationPickerView(startStation: nil,
-                          endStation: nil,
-                          stationList: sampleStations,
-                          trip: Trip()).environmentObject(sampleStore)
+        StationPickerView(stationList: sampleStations).environmentObject(sampleStore)
     }
 }
 

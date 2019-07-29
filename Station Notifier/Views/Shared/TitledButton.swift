@@ -3,15 +3,15 @@ import SwiftUI
 struct TitledView: View {
     let title: String
     var subTitle: String
-    var tapAction: () -> Void
-    
+    let action: () -> Void
+
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
             Text(title.capitalized)
                 .foregroundColor(.black)
                 .fontWeight(.black)
                 .font(.system(size: 40))
-            Button(action: tapAction, label: {
+            Button(action: action, label: {
                 Text(subTitle)
                     .fontWeight(.bold)
                     .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
@@ -29,7 +29,7 @@ struct TitledView: View {
 #if DEBUG
 struct TitledView_Previews: PreviewProvider {
     static var previews: some View {
-        TitledView(title: "Start", subTitle: "Deerfield Beach Station", tapAction: {})
+        TitledView(title: "Start", subTitle: "Deerfield Beach Station", action: {})
     }
 }
 #endif

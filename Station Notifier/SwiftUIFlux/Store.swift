@@ -36,6 +36,7 @@ final public class Store<State: FluxState>: BindableObject {
         
         var middleware = middleware
         middleware.append(asyncActionsMiddleware)
+        middleware.append(loggingMiddleware)
         self.dispatchFunction = middleware
             .reversed()
             .reduce(

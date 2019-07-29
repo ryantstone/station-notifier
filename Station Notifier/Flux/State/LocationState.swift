@@ -3,6 +3,7 @@ import Combine
 import CoreLocation
 
 class LocationState {
+    
     private (set) var location: CLLocation = CLLocation()
     private (set) var latitude: CLLocationDegrees   = CLLocationDegrees()
     private (set) var longitude: CLLocationDegrees  = CLLocationDegrees()

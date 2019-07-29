@@ -1,6 +1,7 @@
 import Foundation
+import CoreLocation
 
-struct Trip {
+class TripState {
     var start: Station?
     var end: Station?
     var intermediateStations: [Station]?
