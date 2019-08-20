@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUIFlux
 
 func tripReducer(state: TripState, action: Action) -> TripState {
     var state = state
@@ -16,9 +17,9 @@ func tripReducer(state: TripState, action: Action) -> TripState {
         }
     }
     
+    // MARK: - Action Handling
     switch action {
     case let tripAction as AddTripPoint:
-
         switch tripAction.tripPoint {
         case .start:
             state.start = tripAction.station
@@ -31,15 +32,23 @@ func tripReducer(state: TripState, action: Action) -> TripState {
             setIntermediateStations(start: state.start,
                                     stop: state.end,
                                     stations: tripAction.stationList)
+        
         default:
             ()
+        }
+    case let tripAction as AddLocationAction:
+        
+        guard let currentStation = state
+            .intermediateStations?
+            .first(where: { tripAction.location.distance(from: $0.location) <= 100 }) else { break }
+        
+        state.lastKnownStop = currentStation
+        if state.lastKnownStop == state.intermediateStations?.last {
+            
         }
     default:
         ()
     }
 
-    
-    
-    
     return state
 }

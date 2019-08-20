@@ -2,14 +2,15 @@ import UIKit
 
 extension CustomStringConvertible {
     var description: String {
-//        var description = type(of: self)
+        var description = "\(type(of: self))\n"
         let mirror = Mirror(reflecting: self)
-        return mirror.children.compactMap { (child) -> String? in
+        
+        for child in mirror.children {
             if let label = child.label {
-                return "\(label): \(child.value)"
+                description.append("\(label): \(child.value)\n")
             }
-            return nil
         }
-        .joined(separator: "\n")
+        
+        return description
     }
 }

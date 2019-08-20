@@ -2,6 +2,7 @@ import Foundation
 import CoreLocation
 import Combine
 import MapKit
+import SwiftUIFlux
 
 class LocationManager: NSObject {
 

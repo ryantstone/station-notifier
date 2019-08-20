@@ -1,7 +1,8 @@
 import SwiftUI
 import Combine
+import SwiftUIFlux
 
-class AppState: FluxState, BindableObject {
+class AppState: FluxState {
 
     var willChange = PassthroughSubject<Void, Never>()
 

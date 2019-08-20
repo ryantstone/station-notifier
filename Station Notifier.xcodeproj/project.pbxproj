@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,15 @@
 		7C3456E022EE0B0B00B341B0 /* TripReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456DF22EE0B0B00B341B0 /* TripReducerTests.swift */; };
 		7C3456E222EE29E200B341B0 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E122EE29E200B341B0 /* Mocks.swift */; };
 		7C3456E422EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */; };
+		7C3456E622F056F200B341B0 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E522F056F200B341B0 /* PermissionManager.swift */; };
+		7C3591AC22F775FD00E2B19A /* TransitFeedsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591AB22F775FD00E2B19A /* TransitFeedsAPI.swift */; };
+		7C3591AF22F901EE00E2B19A /* SwiftUIFlux in Frameworks */ = {isa = PBXBuildFile; productRef = 7C3591AE22F901EE00E2B19A /* SwiftUIFlux */; };
+		7C3591B122FACE8400E2B19A /* DocumentsDirectoryWriterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591B022FACE8400E2B19A /* DocumentsDirectoryWriterService.swift */; };
+		7C3591CE22FBA32900E2B19A /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 7C3591CD22FBA32900E2B19A /* ZIPFoundation */; };
+		7C3591D022FBABF100E2B19A /* TransitSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591CF22FBABF100E2B19A /* TransitSystem.swift */; };
+		7C3591ED2300ED2100E2B19A /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591EC2300ED2100E2B19A /* CollectionExtensions.swift */; };
+		7C3591EF2300F42A00E2B19A /* GTFSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591EE2300F42A00E2B19A /* GTFSService.swift */; };
+		7C3591F12300F4E200E2B19A /* UnzippingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591F02300F4E200E2B19A /* UnzippingService.swift */; };
 		7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C43D43B22D5E819008AC918 /* ContentViewModel.swift */; };
 		7C45170222D95F210073E398 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45170122D95F210073E398 /* AppState.swift */; };
 		7C45170422D95F430073E398 /* LocationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45170322D95F430073E398 /* LocationState.swift */; };
@@ -34,17 +43,12 @@
 		7C69DFEC22E92EAB00240313 /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69DFEB22E92EAB00240313 /* LoggingMiddleware.swift */; };
 		7C69DFEF22E9B08D00240313 /* CLLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69DFEE22E9B08D00240313 /* CLLocationExtension.swift */; };
 		7C7EB57F22E48E9300AF7418 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EB57E22E48E9300AF7418 /* Station.swift */; };
+		7C8DC1ED23078B8E003B2288 /* GTFS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8DC1DD23078A63003B2288 /* GTFS.framework */; };
+		7C8DC1EE23078B8E003B2288 /* GTFS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8DC1DD23078A63003B2288 /* GTFS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5022DC078F002E215F /* AppReducer.swift */; };
 		7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5222DC08A0002E215F /* LocationReducer.swift */; };
 		7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5422DC8183002E215F /* CreateStartStation.swift */; };
 		7CB6754922DEA99D0095E04B /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB6754822DEA99D0095E04B /* SearchField.swift */; };
-		7CB6755522DFFA6D0095E04B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB6754D22DFFA6C0095E04B /* Store.swift */; };
-		7CB6755622DFFA6D0095E04B /* AsyncActionsMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB6754E22DFFA6C0095E04B /* AsyncActionsMiddleware.swift */; };
-		7CB6755722DFFA6D0095E04B /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB6755022DFFA6C0095E04B /* Reducer.swift */; };
-		7CB6755822DFFA6D0095E04B /* FluxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB6755122DFFA6C0095E04B /* FluxState.swift */; };
-		7CB6755922DFFA6D0095E04B /* AsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB6755222DFFA6D0095E04B /* AsyncAction.swift */; };
-		7CB6755A22DFFA6D0095E04B /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB6755322DFFA6D0095E04B /* Middleware.swift */; };
-		7CB6755B22DFFA6D0095E04B /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB6755422DFFA6D0095E04B /* Action.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +59,42 @@
 			remoteGlobalIDString = 4794CB7722AA81930065091F;
 			remoteInfo = "Station Notifier";
 		};
+		7C8DC1DA23078A63003B2288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C8DC1D023078A63003B2288 /* GTFS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "CSV.swift::CSV::Product";
+			remoteInfo = CSV;
+		};
+		7C8DC1DC23078A63003B2288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C8DC1D023078A63003B2288 /* GTFS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "GTFS::GTFS::Product";
+			remoteInfo = GTFS;
+		};
+		7C8DC1DE23078A63003B2288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C8DC1D023078A63003B2288 /* GTFS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "GTFS::GTFSTests::Product";
+			remoteInfo = GTFSTests;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7C3591EB2300603400E2B19A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7C8DC1EE23078B8E003B2288 /* GTFS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4742F60F22DFC94F00863C6E /* StationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationState.swift; sourceTree = "<group>"; };
@@ -80,6 +119,13 @@
 		7C3456DF22EE0B0B00B341B0 /* TripReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripReducerTests.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station NotifierTests/Reducers/TripReducerTests.swift"; sourceTree = "<group>"; };
 		7C3456E122EE29E200B341B0 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Mocks.swift; path = "../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station NotifierTests/Mocks.swift"; sourceTree = "<group>"; };
 		7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomStringConvertibleExtension.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Extensions/CustomStringConvertibleExtension.swift"; sourceTree = "<group>"; };
+		7C3456E522F056F200B341B0 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PermissionManager.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Managers/PermissionManager.swift"; sourceTree = "<group>"; };
+		7C3591AB22F775FD00E2B19A /* TransitFeedsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitFeedsAPI.swift; sourceTree = "<group>"; };
+		7C3591B022FACE8400E2B19A /* DocumentsDirectoryWriterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsDirectoryWriterService.swift; sourceTree = "<group>"; };
+		7C3591CF22FBABF100E2B19A /* TransitSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitSystem.swift; sourceTree = "<group>"; };
+		7C3591EC2300ED2100E2B19A /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
+		7C3591EE2300F42A00E2B19A /* GTFSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTFSService.swift; sourceTree = "<group>"; };
+		7C3591F02300F4E200E2B19A /* UnzippingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnzippingService.swift; sourceTree = "<group>"; };
 		7C43D43B22D5E819008AC918 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		7C45170122D95F210073E398 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		7C45170322D95F430073E398 /* LocationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationState.swift; sourceTree = "<group>"; };
@@ -89,17 +135,11 @@
 		7C69DFEB22E92EAB00240313 /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoggingMiddleware.swift; path = "../../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Flux/Middleware/LoggingMiddleware.swift"; sourceTree = "<group>"; };
 		7C69DFEE22E9B08D00240313 /* CLLocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CLLocationExtension.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Extensions/CLLocationExtension.swift"; sourceTree = "<group>"; };
 		7C7EB57E22E48E9300AF7418 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Station.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Models/Station.swift"; sourceTree = "<group>"; };
+		7C8DC1D023078A63003B2288 /* GTFS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GTFS.xcodeproj; path = ../GTFS/GTFS.xcodeproj; sourceTree = "<group>"; };
 		7CAB9D5022DC078F002E215F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5222DC08A0002E215F /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5422DC8183002E215F /* CreateStartStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStartStation.swift; sourceTree = "<group>"; };
 		7CB6754822DEA99D0095E04B /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
-		7CB6754D22DFFA6C0095E04B /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		7CB6754E22DFFA6C0095E04B /* AsyncActionsMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncActionsMiddleware.swift; sourceTree = "<group>"; };
-		7CB6755022DFFA6C0095E04B /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
-		7CB6755122DFFA6C0095E04B /* FluxState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxState.swift; sourceTree = "<group>"; };
-		7CB6755222DFFA6D0095E04B /* AsyncAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncAction.swift; sourceTree = "<group>"; };
-		7CB6755322DFFA6D0095E04B /* Middleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
-		7CB6755422DFFA6D0095E04B /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +147,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C8DC1ED23078B8E003B2288 /* GTFS.framework in Frameworks */,
+				7C3591AF22F901EE00E2B19A /* SwiftUIFlux in Frameworks */,
+				7C3591CE22FBA32900E2B19A /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +175,9 @@
 		4791937922AA83BE00EA30E4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7C3591B022FACE8400E2B19A /* DocumentsDirectoryWriterService.swift */,
+				7C3591EE2300F42A00E2B19A /* GTFSService.swift */,
+				7C3591F02300F4E200E2B19A /* UnzippingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -140,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				4791937D22AA854C00EA30E4 /* LocationManager.swift */,
+				7C3456E522F056F200B341B0 /* PermissionManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -147,9 +194,11 @@
 		4794CB6F22AA81930065091F = {
 			isa = PBXGroup;
 			children = (
+				7C8DC1D023078A63003B2288 /* GTFS.xcodeproj */,
 				4794CB7A22AA81930065091F /* Station Notifier */,
 				4794CB9122AA81950065091F /* Station NotifierTests */,
 				4794CB7922AA81930065091F /* Products */,
+				7C3591E022FF083C00E2B19A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,8 +214,8 @@
 		4794CB7A22AA81930065091F /* Station Notifier */ = {
 			isa = PBXGroup;
 			children = (
+				7C3591AA22F706A800E2B19A /* Networking */,
 				7C69DFED22E9B07600240313 /* Extensions */,
-				7CB6754C22DFFA6C0095E04B /* SwiftUIFlux */,
 				7CB6754622DEA9600095E04B /* Views */,
 				7C45170022D95F0F0073E398 /* Flux */,
 				7C480D5B22C98F9F005A10F6 /* Models */,
@@ -210,6 +259,21 @@
 			path = Reducers;
 			sourceTree = "<group>";
 		};
+		7C3591AA22F706A800E2B19A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7C3591AB22F775FD00E2B19A /* TransitFeedsAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7C3591E022FF083C00E2B19A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7C45170022D95F0F0073E398 /* Flux */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +292,7 @@
 				7C43D43B22D5E819008AC918 /* ContentViewModel.swift */,
 				7C7EB57E22E48E9300AF7418 /* Station.swift */,
 				7C19DCCD22E4F24000708071 /* Trip.swift */,
+				7C3591CF22FBABF100E2B19A /* TransitSystem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,8 +310,19 @@
 			children = (
 				7C69DFEE22E9B08D00240313 /* CLLocationExtension.swift */,
 				7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */,
+				7C3591EC2300ED2100E2B19A /* CollectionExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7C8DC1D123078A63003B2288 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7C8DC1DB23078A63003B2288 /* CSV.framework */,
+				7C8DC1DD23078A63003B2288 /* GTFS.framework */,
+				7C8DC1DF23078A63003B2288 /* GTFSTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7CAB9D4E22DC076F002E215F /* State */ = {
@@ -290,28 +366,6 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		7CB6754C22DFFA6C0095E04B /* SwiftUIFlux */ = {
-			isa = PBXGroup;
-			children = (
-				7CB6754D22DFFA6C0095E04B /* Store.swift */,
-				7CB6754E22DFFA6C0095E04B /* AsyncActionsMiddleware.swift */,
-				7CB6754F22DFFA6C0095E04B /* protocols */,
-			);
-			path = SwiftUIFlux;
-			sourceTree = "<group>";
-		};
-		7CB6754F22DFFA6C0095E04B /* protocols */ = {
-			isa = PBXGroup;
-			children = (
-				7CB6755022DFFA6C0095E04B /* Reducer.swift */,
-				7CB6755122DFFA6C0095E04B /* FluxState.swift */,
-				7CB6755222DFFA6D0095E04B /* AsyncAction.swift */,
-				7CB6755322DFFA6D0095E04B /* Middleware.swift */,
-				7CB6755422DFFA6D0095E04B /* Action.swift */,
-			);
-			path = protocols;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,6 +376,7 @@
 				4794CB7422AA81930065091F /* Sources */,
 				4794CB7522AA81930065091F /* Frameworks */,
 				4794CB7622AA81930065091F /* Resources */,
+				7C3591EB2300603400E2B19A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,6 +384,8 @@
 			);
 			name = "Station Notifier";
 			packageProductDependencies = (
+				7C3591AE22F901EE00E2B19A /* SwiftUIFlux */,
+				7C3591CD22FBA32900E2B19A /* ZIPFoundation */,
 			);
 			productName = "Station Notifier";
 			productReference = 4794CB7822AA81930065091F /* Station Notifier.app */;
@@ -381,9 +438,17 @@
 			);
 			mainGroup = 4794CB6F22AA81930065091F;
 			packageReferences = (
+				7C3591AD22F901EE00E2B19A /* XCRemoteSwiftPackageReference "SwiftUIFlux" */,
+				7C3591CC22FBA32900E2B19A /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 			);
 			productRefGroup = 4794CB7922AA81930065091F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7C8DC1D123078A63003B2288 /* Products */;
+					ProjectRef = 7C8DC1D023078A63003B2288 /* GTFS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4794CB7722AA81930065091F /* Station Notifier */,
@@ -391,6 +456,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7C8DC1DB23078A63003B2288 /* CSV.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CSV.framework;
+			remoteRef = 7C8DC1DA23078A63003B2288 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7C8DC1DD23078A63003B2288 /* GTFS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTFS.framework;
+			remoteRef = 7C8DC1DC23078A63003B2288 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7C8DC1DF23078A63003B2288 /* GTFSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = file;
+			path = GTFSTests.xctest;
+			remoteRef = 7C8DC1DE23078A63003B2288 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4794CB7622AA81930065091F /* Resources */ = {
@@ -417,37 +506,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C19DCCE22E4F24000708071 /* Trip.swift in Sources */,
 				4742F61322DFCA1E00863C6E /* StationActions.swift in Sources */,
+				7C3591B122FACE8400E2B19A /* DocumentsDirectoryWriterService.swift in Sources */,
 				7C19DCCC22E4AD3A00708071 /* StationPickerView.swift in Sources */,
 				7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */,
 				7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */,
+				7C3591F12300F4E200E2B19A /* UnzippingService.swift in Sources */,
 				4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */,
-				7C19DCCE22E4F24000708071 /* Trip.swift in Sources */,
-				7CB6755722DFFA6D0095E04B /* Reducer.swift in Sources */,
 				7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */,
 				4794CB7E22AA81930065091F /* SceneDelegate.swift in Sources */,
 				7C69DFEC22E92EAB00240313 /* LoggingMiddleware.swift in Sources */,
-				7CB6755B22DFFA6D0095E04B /* Action.swift in Sources */,
 				7C69DFEF22E9B08D00240313 /* CLLocationExtension.swift in Sources */,
-				7CB6755622DFFA6D0095E04B /* AsyncActionsMiddleware.swift in Sources */,
 				7C3456E422EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift in Sources */,
 				7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */,
 				7CB6754922DEA99D0095E04B /* SearchField.swift in Sources */,
 				7C45170222D95F210073E398 /* AppState.swift in Sources */,
 				7C45170422D95F430073E398 /* LocationState.swift in Sources */,
-				7CB6755522DFFA6D0095E04B /* Store.swift in Sources */,
-				7CB6755A22DFFA6D0095E04B /* Middleware.swift in Sources */,
 				7C19DCD022E4F5BB00708071 /* TitledButton.swift in Sources */,
 				4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */,
-				7CB6755822DFFA6D0095E04B /* FluxState.swift in Sources */,
 				7C7EB57F22E48E9300AF7418 /* Station.swift in Sources */,
 				7C69DFE722E7E53100240313 /* TripReducer.swift in Sources */,
+				7C3591D022FBABF100E2B19A /* TransitSystem.swift in Sources */,
 				7C69DFE522E7E4B900240313 /* TripActions.swift in Sources */,
 				4742F61522DFCA8600863C6E /* StationReducer.swift in Sources */,
 				4742F61022DFC94F00863C6E /* StationState.swift in Sources */,
-				7CB6755922DFFA6D0095E04B /* AsyncAction.swift in Sources */,
+				7C3456E622F056F200B341B0 /* PermissionManager.swift in Sources */,
 				4794CB8022AA81930065091F /* ContentView.swift in Sources */,
+				7C3591EF2300F42A00E2B19A /* GTFSService.swift in Sources */,
 				47A88E4B22DF40D5009E4CAF /* StationListCell.swift in Sources */,
+				7C3591AC22F775FD00E2B19A /* TransitFeedsAPI.swift in Sources */,
+				7C3591ED2300ED2100E2B19A /* CollectionExtensions.swift in Sources */,
 				7C69DFE922E7E55A00240313 /* TripState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -709,6 +798,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C3591AD22F901EE00E2B19A /* XCRemoteSwiftPackageReference "SwiftUIFlux" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Dimillian/SwiftUIFlux";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.5;
+			};
+		};
+		7C3591CC22FBA32900E2B19A /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C3591AE22F901EE00E2B19A /* SwiftUIFlux */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C3591AD22F901EE00E2B19A /* XCRemoteSwiftPackageReference "SwiftUIFlux" */;
+			productName = SwiftUIFlux;
+		};
+		7C3591CD22FBA32900E2B19A /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C3591CC22FBA32900E2B19A /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4794CB7022AA81930065091F /* Project object */;
 }

@@ -55,22 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0ABE011F-74A4-4460-ACBB-E78DABF2204E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Views/StationPickerView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "didSelect(station:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D62C86C8-E318-4BB9-8391-59CC39261DD5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -78,8 +62,8 @@
             filePath = "../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Views/StationPickerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "didChange(tripPoint:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -152,7 +136,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "01C0574B-91BE-4304-8EC0-C597DF92074D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Flux/Reducers/TripReducer.swift"
@@ -162,6 +146,134 @@
             endingLineNumber = "11"
             landmarkName = "setIntermediateStations(start:stop:stations:)"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD841E39-345A-4597-A3EB-86A67F366F44"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Flux/State/TripState.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "lastKnownStop"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3832045E-C1C6-446C-9C7B-B8BD4C70FC2C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Station Notifier/Networking/TransitFeedsAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "7"
+            endingLineNumber = "7"
+            landmarkName = "getData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42F46546-0E23-4B2B-820C-E75E38B11DE8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Views/Shared/TitledButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8CC5944F-1D86-40D2-9A1C-F60203385CA9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Station Notifier/Networking/TransitFeedsAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "getData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B523B86F-7712-4EC7-8582-B133C7F5906C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Station Notifier/Networking/TransitFeedsAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "getData(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B523B86F-7712-4EC7-8582-B133C7F5906C - 9f08f6677238302"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Station_Notifier.BaseAPI.getData(Foundation.URL) -&gt; Combine.AnyPublisher&lt;Foundation.Data, Station_Notifier.APIError&gt;"
+                  moduleName = "Station Notifier"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryanstone/Documents/Development/station-notifier/Station%20Notifier/Networking/TransitFeedsAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "455">
+               </Location>
+               <Location
+                  uuid = "B523B86F-7712-4EC7-8582-B133C7F5906C - 72b926653acf43af"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Foundation.URLError) -&gt; Station_Notifier.APIError in Station_Notifier.BaseAPI.getData(Foundation.URL) -&gt; Combine.AnyPublisher&lt;Foundation.Data, Station_Notifier.APIError&gt;"
+                  moduleName = "Station Notifier"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryanstone/Documents/Development/station-notifier/Station%20Notifier/Networking/TransitFeedsAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "89">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4223F68-647B-4711-B52D-A5AA65160647"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/Station_Notifier-aaglsbosvoxliogaxcwsrevwxpjl/SourcePackages/checkouts/GTFS/Sources/GTFS/Utilities/Parser.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

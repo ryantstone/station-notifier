@@ -1,16 +1,18 @@
 import SwiftUI
+import SwiftUIFlux
 
 struct StationPickerView: View {
     
     @EnvironmentObject private var store: Store<AppState>
     var stationList: [Station]
     @State var currentStationChoice = TripPoint.start
+    var startButtonText = ""
 
     var body: some View {
         VStack {
             HStack(spacing: 40) {
                 TitledView(title: "Start",
-                           subTitle: "Select Station",
+                           subTitle:  startButtonText,
                            action: { self.didChange(tripPoint: .start) })
                 TitledView(title: "End",
                            subTitle: "Select Station",
@@ -31,6 +33,7 @@ struct StationPickerView: View {
     }
     
     private func didSelect(station: Station) {
+//        startButtonText = station.name
         store.dispatch(action: AddTripPoint(station: station,
                                             tripPoint: currentStationChoice,
                                             stationList: stationList))

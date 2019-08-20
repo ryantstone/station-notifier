@@ -1,5 +1,6 @@
 import UIKit
 import SwiftUI
+import SwiftUIFlux
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -28,13 +29,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 let store = Store<AppState>(reducer: appStateReducer,
                                  middleware: [],
-                                 state: AppState(),
-                                 queue: .main)
+                                 state: AppState())
 
 #if DEBUG
 let sampleStore = Store<AppState>(reducer: appStateReducer,
                                   middleware: [],
-                                  state: AppState(),
-                                  queue: .main)
+                                  state: AppState())
 
 #endif

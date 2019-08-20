@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUIFlux
 
 let loggingMiddleware: Middleware<AppState> = { dispatch, getState in
     return { next in

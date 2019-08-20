@@ -1,15 +1,16 @@
 import SwiftUI
 import Combine
+import SwiftUIFlux
 
 struct SearchField : View {
 
-    @ObjectBinding var searchWrapper: SearchWrapper
+    @ObservedObject var searchWrapper: SearchWrapper
     let placeHolder: String
 
     var body: some View {
         return HStack(alignment: .center, spacing: 0) {
-            TextField($searchWrapper.searchText, placeholder: Text(verbatim: placeHolder))
-                .textFieldStyle(.roundedBorder)
+            TextField(placeHolder, text: $searchWrapper.searchText)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.leading)
                 .padding(.trailing)
         }

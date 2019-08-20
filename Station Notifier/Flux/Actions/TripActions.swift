@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUIFlux
 
 struct AddTripPoint: Action {
     let station: Station

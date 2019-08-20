@@ -9,7 +9,7 @@ struct Station: Hashable, Identifiable, CustomStringConvertible {
     let name: String
     let longitude: CLLocationDegrees
     let latitude: CLLocationDegrees
-    let location: CLLocation?
+    let location: CLLocation
 
     init?(_ mapItem: MKMapItem) {
         guard let name  = mapItem.name else { return nil }
