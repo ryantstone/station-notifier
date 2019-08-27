@@ -20,7 +20,7 @@ struct StationPickerView: View {
             }.frame(width: UIScreen.main.bounds.width)
             List(stationList) { station in
                 StationListCell(station: station, tripPoint: nil)
-                    .tapAction { self.didSelect(station: station) }
+                    .onTapGesture { self.didSelect(station: station) }
             }
         }.onAppear(perform: {
             self.store.dispatch(action: FetchStationAction())

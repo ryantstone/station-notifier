@@ -4,7 +4,7 @@ import Foundation
 struct TransitSystem {
     
     private let urls: [URL]
-    var agency: Agency?
+    var agency = Set<Agency>()
     var calendarDates = Set<CalendarDate>()
     var stopTimes = Set<StopTime>()
     var trips = Set<GTFS.Trip>()
@@ -15,6 +15,8 @@ struct TransitSystem {
     var shapes = [Shape]()
     var fareAttributes = Set<FareAttributes>()
     var frequencies = Set<Frequencies>()
+    var transfers = Set<Transfer>()
+    var fareRules = Set<FareRules>()
 
     init(urls: [URL]) {
         self.urls = urls
@@ -24,7 +26,8 @@ struct TransitSystem {
 
     private mutating func buildProperties() {
 
-        self.agency = filterAndBuild(name: .agency, type: Agency.self)?.first
+        filterAndBuild(name: .agency, type: Agency.self)
+            .flatMap { agency.append(contentsOf: $0) }
 
         filterAndBuild(name: .calendarDates, type: CalendarDate.self)
             .flatMap { calendarDates.append(contentsOf: $0) }
@@ -49,52 +52,99 @@ struct TransitSystem {
         
         filterAndBuild(name: .frequencies, type: Frequencies.self)
             .flatMap{ self.frequencies.append(contentsOf: $0) }
+        
+        filterAndBuild(name: .transfers, type: Transfer.self)
+            .flatMap { self.transfers.append(contentsOf: $0)}
+        
+        filterAndBuild(name: .fareRules, type: FareRules.self)
+            .flatMap { self.fareRules.append(contentsOf: $0) }
     }
 
     private mutating func joinProperties() {
-        trips.mutatingMap { trip in
-            trip.stopTimes.append(contentsOf: stopTimes.filter { $0.tripId == trip.id  })
-            trip.route          = routes.first { $0.id == trip.routeId }
-            trip.shapes         = shapes.filter({ $0.shapeId == trip.shapeId })
-            trip.calendar       = calendar.first(where: { $0.serviceId == trip.serviceId })
-            trip.frequencies    = frequencies.filter { $0.tripId == trip.id }
+        
+        let routeCache          = routes.toDict(key: \.id)
+        let shapeCache          = shapes.toDict(key: \.shapeId)
+        let calendarCache       = calendar.toDict(key: \.serviceId)
+        let stopTimeCache       = stopTimes.toDict(key: \.tripId)
+        let frequencyCache      = frequencies.toDict(key: \.tripId)
+        let calendarDateCache   = calendarDates.toDict(key: \.serviceId)
+        let fareRulesCache      = fareRules.toDict(key: \.routeId)
+        let agencyCache         = agency.toDict(key: \.id)
 
-            let matchingCalendarDates = calendarDates.filter { $0.serviceId == trip.serviceId }
+        trips.mutatingMap { trip in
+            trip.route       = routeCache[trip.routeId].flatMap { $0.first }
+            trip.calendar    = calendarCache[trip.serviceId].flatMap { $0.first }
+            
+            trip.shapes = trip.shapeId
+                .flatMap { shapeCache[$0] } ?? []
+            
+            let matchingCalendarDates = calendarDateCache[trip.serviceId] ?? []
             trip.calendar?.appendCalendarDate(matchingCalendarDates)
+            trip.frequencies.append(contentsOf: frequencyCache[trip.id] ?? [])
+            trip.stopTimes.append(contentsOf: stopTimeCache[trip.id] ?? [])
         }
+        
+        let stopCache = stops.toDict(key: \.id)
+        let tripCache = trips.toDict(key: \.id)
+        let tripServiceCache = trips.toDict(key: \.serviceId)
         
         stopTimes.mutatingMap { stopTime in
-            stopTime.stop = stops.first(where: { stopTime.stopId == $0.id })
-            stopTime.trip = trips.first(where: { $0.id == stopTime.tripId })
+            stopTime.stop = stopCache[stopTime.stopId].flatMap { $0.first }
+            stopTime.trip = tripCache[stopTime.tripId].flatMap { $0.first }
         }
         
-        routes.forEach { route in
-            let matchingRoutes = routes.filter { $0.agencyId == agency?.id }
-            agency?.routes.append(contentsOf: Array(matchingRoutes))
+        calendar.mutatingMap { calendar in
+            tripServiceCache[calendar.serviceId]?.first
+                .flatMap { trip in calendar.trip = trip }
         }
-        
-        
-    }
-    
-    private func generateDictionary<Key: Comparable, Value: Comparable>(store: KeyPath<LHSType, LHSValue>, compare: KeyPath<RHSType, RHSValue>, data: [LHSType]) -> [LHSValue: LHSType] {
-        
-        return data.reduce(into: [:]) { (result, value) in
+              
+        transfers.mutatingMap { transfer in
+            stopCache[transfer.toStopId]
+                .flatMap { stops in transfer.toStop = stops.first }
             
+            stopCache[transfer.fromStopId]
+                .flatMap { stops in transfer.fromStop = stops.first }
+        }
+        
+        let tripRouteIdCache = trips.toDict(key: \.routeId)
+        
+        routes.mutatingMap { route in
+            route.agencyId
+                .flatMap { agencyId in agencyCache[agencyId]?.first }
+                .flatMap { agency in route.agency = agency }
+            
+            fareRulesCache[route.id]
+                .flatMap { route.fareRules.append(contentsOf: $0) }
+            
+            tripRouteIdCache[route.id]
+                .flatMap { trips in route.trips.append(contentsOf: trips) }
+                
+        }
+        
+        let routesAgencyIdCache = routes.toDict(key: \.agencyId)
+        
+        agency.mutatingMap { agency in
+            routesAgencyIdCache[agency.id]
+                .flatMap { routes in agency.routes.append(contentsOf: routes) }
+        }
+        
+        frequencies.mutatingMap { frequency in
+            tripCache[frequency.tripId]
+                .flatMap { trip in frequency.trip = trip.first }
+        }
+        
+        let fareRuleCache = fareRules.toDict(key: \.fareId)
+        
+        fareRules.mutatingMap { rule in
+            fareRuleCache[rule.fareId]
+                .flatMap { rules in rule.fareRules.append(contentsOf: rules) }
         }
     }
 
     func filterAndBuild<T: Codable>(name: GTFSFileName, type: T.Type) -> [T]? {
         return urls
             .first(where: { filterFiles(url: $0, fileName: name) })
-            .map { val in
-                print(val)
-                return val
-            }
             .flatMap { url in try? String(contentsOf: url, encoding: .utf8) }
-            .map { val in
-                print(val)
-                return val
-            }
             .flatMap { text in try? parser.decodeFile(data: text, type: T.self) }
     }
     
@@ -114,6 +164,7 @@ struct TransitSystem {
         stops = "stops",
         calendar = "calendar",
         routes = "routes",
-        frequencies = "frequencies"
+        frequencies = "frequencies",
+        transfers = "transfers"
     }
 }

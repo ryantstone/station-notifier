@@ -26,7 +26,7 @@ struct SearchField : View {
 //}
 //#endif
 
-class SearchWrapper: BindableObject {
+class SearchWrapper: ObservableObject {
     var willChange = PassthroughSubject<SearchWrapper, Never>()
     @Published var searchText = ""
     private var cancellableSubscriber: Cancellable?

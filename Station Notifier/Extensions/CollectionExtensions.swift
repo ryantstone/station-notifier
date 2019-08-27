@@ -21,3 +21,15 @@ extension Set {
         })
     }
 }
+
+extension Collection {
+    func toDict<Key: Hashable>(key: KeyPath<Element, Key>) -> [Key: [Element]] {
+        return self.reduce(into: [Key: [Element]]()) { (result, element) in
+            if result[element[keyPath:key]] != nil {
+                result[element[keyPath:key]]?.append(element)
+            } else {
+                result[element[keyPath:key]] = [element]
+            }
+        }
+    }
+}

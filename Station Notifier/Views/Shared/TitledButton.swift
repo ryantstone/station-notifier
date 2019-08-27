@@ -31,9 +31,6 @@ struct TitledView: View {
     }
     
     private func didTap() {
-        let url = URL(string: "http://www.tri-rail.com/GTDF/Current/google_transit.zip")!
-        
-    
         action()
         isSelected.toggle()
     }

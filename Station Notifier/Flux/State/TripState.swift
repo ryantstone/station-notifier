@@ -5,7 +5,6 @@ class TripState {
     var start: Station?
     var end: Station?
     var intermediateStations: [Station]?
-    var lastKnownStop: Station? {
-        didSet { print(lastKnownStop) }
-    }
+    var lastKnownStop: Station?
+    var transitSystem: TransitSystem?
 }
