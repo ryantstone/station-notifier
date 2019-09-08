@@ -5,7 +5,7 @@ func transitSystemReducer(state: TransitSystemState, action: Action) -> TransitS
     var state = state
 
     switch action {
-    case let action as GetLocationsAction:
+    case let action as SetLocationsAction:
         state.locations = action.locations
     default:
         break

@@ -1,19 +1,69 @@
 import Foundation
 import Combine
 
+class API {
+    static let shared = API()
+
+    let transitFeedsAPI = TransitFeedsAPI(baseAPI: BaseAPI())
+}
+
 class TransitFeedsAPI {
-    let api = BaseAPI()
-    let baseUrl = "https://transitfeeds.com/issues"
+    let api: BaseAPI
+    let baseUrl = "https://api.transitfeeds.com/v1"
+    var cancellables = Set<AnyCancellable>()
+
+    enum Path: String {
+        case getLocations = "/getLocations",
+        getFeeds = "/getFeeds"
+    }
     
-    func getLocations() -> AnyPublisher<Locations, APIError> {
-        guard let url = URL(string: baseUrl + "/getLocations") else {
-            return AnyPublisher<Locations, APIError>
-        }
+    init(baseAPI: BaseAPI = BaseAPI()) {
+        self.api = baseAPI
+    }
+
+    func getFeeds(location: Location) {
+        let item = URLQueryItem(name: "location", value: String(describing: location.id))
+        guard let url = buildURLComponents(path: .getFeeds, queryItems: [item]) else { return }
         
-        return api.getData(feed)
-            .decode(type: Locations.self, decoder: JSONDecoder())
+        makeRequest(TransitFeedsResponse<GetFeedsResults>.self, url: url)
+            .sink(receiveCompletion: { (error) in
+                print(error)
+            }, receiveValue: { results in
+                print(results)
+            }).store(in: &cancellables)
+    }
+    
+    func getLocations() {
+        guard let url = buildURLComponents(path: .getLocations) else { return }
+       
+        makeRequest(TransitFeedsResponse<GetLocationsResults>.self, url: url)
+            .sink(receiveCompletion: { (error) in print(error) },
+                  receiveValue: { (locationsResponse) in
+                    guard let locations = locationsResponse.results?.locations else { return }
+                    store.dispatch(action: SetLocationsAction(locations: locations))
+            })
+            .store(in: &cancellables)
+    }
+    
+    private func makeRequest<T: Codable>(_ type: T.Type, url: URL) -> AnyPublisher<T, APIError> {
+        return api.getData(url)
+            .map {
+                $0
+            }
+            .decode(type: T.self, decoder: JSONDecoder())
             .mapError { APIError.apiError(reason: $0.localizedDescription) }
             .eraseToAnyPublisher()
+    }
+    
+    private func buildURLComponents(path: Path, queryItems: [URLQueryItem] = []) -> URL? {
+        return URL(string: baseUrl + path.rawValue)
+            .flatMap({ URLComponents(url: $0, resolvingAgainstBaseURL: false)})
+            .flatMap({ url -> URLComponents in
+                var url = url
+                url.queryItems = [ URLQueryItem(name: "key", value: Constants.transitFeedsKey) ]
+                url.queryItems?.append(contentsOf: queryItems)
+                return url
+            }).flatMap({ $0.url })
     }
 }
 
@@ -28,6 +78,7 @@ class BaseAPI {
     }
 }
 
+// MARK: -  API Error
 enum APIError: Error, LocalizedError {
     case unknown,
     invalidUrl(String),
@@ -45,30 +96,3 @@ enum APIError: Error, LocalizedError {
     }
 }
 
-struct Locations: Codable {
-    let status: String
-    let ts: String
-    let results: Results
-    
-    struct Results: Codable {
-        let locations: [Location]
-    }
-}
-
-struct Location: Codable {
-    let id: String
-    let pid: Int
-    let title: String
-    let name: String
-    let lattitude: Double
-    let longitude: Double
-    
-    private enum CodingKeys: String, CodingKey {
-        case id,
-        pid,
-        title = "t",
-        name = "n",
-        lattitude = "lat",
-        longitude = "lon"
-    }
-}

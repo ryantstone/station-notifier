@@ -9,10 +9,12 @@ class AppState: FluxState {
     var stationState: StationState      { didSet { willChange.send() } }
     var locationState: LocationState    { didSet { willChange.send() } }
     var tripState: TripState            { didSet { willChange.send() } }
+    var transitSystemState: TransitSystemState { didSet { willChange.send() }}
     
     init() {
-        locationState   = LocationState()
-        stationState    = StationState()
-        tripState       = TripState()
+        locationState      = LocationState()
+        stationState       = StationState()
+        tripState          = TripState()
+        transitSystemState = TransitSystemState()
     }
 }

@@ -34,6 +34,9 @@
 		7C3591ED2300ED2100E2B19A /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591EC2300ED2100E2B19A /* CollectionExtensions.swift */; };
 		7C3591EF2300F42A00E2B19A /* GTFSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591EE2300F42A00E2B19A /* GTFSService.swift */; };
 		7C3591F12300F4E200E2B19A /* UnzippingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591F02300F4E200E2B19A /* UnzippingService.swift */; };
+		7C3759532324702F000B129E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3759522324702F000B129E /* Constants.swift */; };
+		7C37595623247050000B129E /* ConstantsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37595523247050000B129E /* ConstantsProtocol.swift */; };
+		7C375958232492F8000B129E /* TransitFeedsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C375957232492F8000B129E /* TransitFeedsResponse.swift */; };
 		7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C43D43B22D5E819008AC918 /* ContentViewModel.swift */; };
 		7C45170222D95F210073E398 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45170122D95F210073E398 /* AppState.swift */; };
 		7C45170422D95F430073E398 /* LocationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45170322D95F430073E398 /* LocationState.swift */; };
@@ -106,6 +109,9 @@
 		7C3591EC2300ED2100E2B19A /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
 		7C3591EE2300F42A00E2B19A /* GTFSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTFSService.swift; sourceTree = "<group>"; };
 		7C3591F02300F4E200E2B19A /* UnzippingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnzippingService.swift; sourceTree = "<group>"; };
+		7C3759522324702F000B129E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7C37595523247050000B129E /* ConstantsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsProtocol.swift; sourceTree = "<group>"; };
+		7C375957232492F8000B129E /* TransitFeedsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitFeedsResponse.swift; sourceTree = "<group>"; };
 		7C43D43B22D5E819008AC918 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		7C45170122D95F210073E398 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		7C45170322D95F430073E398 /* LocationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationState.swift; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 		4794CB7A22AA81930065091F /* Station Notifier */ = {
 			isa = PBXGroup;
 			children = (
+				7C37595423247041000B129E /* Protocols */,
 				7C68A4B623115F3C0040E986 /* GTFS */,
 				7C3591AA22F706A800E2B19A /* Networking */,
 				7C69DFED22E9B07600240313 /* Extensions */,
@@ -211,6 +218,7 @@
 				4794CB8622AA81950065091F /* LaunchScreen.storyboard */,
 				4794CB8922AA81950065091F /* Info.plist */,
 				4794CB8322AA81950065091F /* Preview Content */,
+				7C3759522324702F000B129E /* Constants.swift */,
 			);
 			path = "Station Notifier";
 			sourceTree = "<group>";
@@ -257,6 +265,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7C37595423247041000B129E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7C37595523247050000B129E /* ConstantsProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		7C45170022D95F0F0073E398 /* Flux */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +292,7 @@
 				7C7EB57E22E48E9300AF7418 /* Station.swift */,
 				7C19DCCD22E4F24000708071 /* Trip.swift */,
 				7C3591CF22FBABF100E2B19A /* TransitSystem.swift */,
+				7C375957232492F8000B129E /* TransitFeedsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -470,6 +487,7 @@
 				7C3456E422EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift in Sources */,
 				7C4CB601231532F300CAA3AA /* LoggingMiddleware.swift in Sources */,
 				7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */,
+				7C375958232492F8000B129E /* TransitFeedsResponse.swift in Sources */,
 				7CB6754922DEA99D0095E04B /* SearchField.swift in Sources */,
 				7C45170222D95F210073E398 /* AppState.swift in Sources */,
 				7C45170422D95F430073E398 /* LocationState.swift in Sources */,
@@ -482,6 +500,7 @@
 				4742F61522DFCA8600863C6E /* StationReducer.swift in Sources */,
 				4742F61022DFC94F00863C6E /* StationState.swift in Sources */,
 				7C3456E622F056F200B341B0 /* PermissionManager.swift in Sources */,
+				7C37595623247050000B129E /* ConstantsProtocol.swift in Sources */,
 				7C4CB5FD2314BD0800CAA3AA /* TransitSystemReducer.swift in Sources */,
 				4794CB8022AA81930065091F /* ContentView.swift in Sources */,
 				7C3591EF2300F42A00E2B19A /* GTFSService.swift in Sources */,
@@ -489,6 +508,7 @@
 				7C3591AC22F775FD00E2B19A /* TransitFeedsAPI.swift in Sources */,
 				7C3591ED2300ED2100E2B19A /* CollectionExtensions.swift in Sources */,
 				7C69DFE922E7E55A00240313 /* TripState.swift in Sources */,
+				7C3759532324702F000B129E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
