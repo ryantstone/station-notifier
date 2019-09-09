@@ -50,6 +50,7 @@
 		7C69DFE922E7E55A00240313 /* TripState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69DFE822E7E55A00240313 /* TripState.swift */; };
 		7C69DFEF22E9B08D00240313 /* CLLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69DFEE22E9B08D00240313 /* CLLocationExtension.swift */; };
 		7C7EB57F22E48E9300AF7418 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EB57E22E48E9300AF7418 /* Station.swift */; };
+		7C93648D2325D58E00E01D12 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93648C2325D58E00E01D12 /* API.swift */; };
 		7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5022DC078F002E215F /* AppReducer.swift */; };
 		7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5222DC08A0002E215F /* LocationReducer.swift */; };
 		7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5422DC8183002E215F /* CreateStartStation.swift */; };
@@ -125,6 +126,7 @@
 		7C69DFE822E7E55A00240313 /* TripState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripState.swift; path = "../../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Flux/State/TripState.swift"; sourceTree = "<group>"; };
 		7C69DFEE22E9B08D00240313 /* CLLocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CLLocationExtension.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Extensions/CLLocationExtension.swift"; sourceTree = "<group>"; };
 		7C7EB57E22E48E9300AF7418 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Station.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Models/Station.swift"; sourceTree = "<group>"; };
+		7C93648C2325D58E00E01D12 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7CAB9D5022DC078F002E215F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5222DC08A0002E215F /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5422DC8183002E215F /* CreateStartStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStartStation.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				7C3591AB22F775FD00E2B19A /* TransitFeedsAPI.swift */,
+				7C93648C2325D58E00E01D12 /* API.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				4794CB8022AA81930065091F /* ContentView.swift in Sources */,
 				7C3591EF2300F42A00E2B19A /* GTFSService.swift in Sources */,
 				47A88E4B22DF40D5009E4CAF /* StationListCell.swift in Sources */,
+				7C93648D2325D58E00E01D12 /* API.swift in Sources */,
 				7C3591AC22F775FD00E2B19A /* TransitFeedsAPI.swift in Sources */,
 				7C3591ED2300ED2100E2B19A /* CollectionExtensions.swift in Sources */,
 				7C69DFE922E7E55A00240313 /* TripState.swift in Sources */,

@@ -1,19 +1,15 @@
 import Foundation
 import Combine
 
-class API {
-    static let shared = API()
-
-    let transitFeedsAPI = TransitFeedsAPI(baseAPI: BaseAPI())
-}
-
+// MARK: - TransitFeedsAPI
 class TransitFeedsAPI {
     let api: BaseAPI
     let baseUrl = "https://api.transitfeeds.com/v1"
     var cancellables = Set<AnyCancellable>()
 
     enum Path: String {
-        case getLocations = "/getLocations",
+        case
+        getLocations = "/getLocations",
         getFeeds = "/getFeeds"
     }
     
@@ -68,33 +64,3 @@ class TransitFeedsAPI {
             }).flatMap({ $0.url })
     }
 }
-
-class BaseAPI {
-    func getData(_ url: URL) -> AnyPublisher<Data, APIError> {
-        return URLSession
-            .shared
-            .dataTaskPublisher(for: url)
-            .map { $0.data }
-            .mapError { APIError.apiError(reason: $0.localizedDescription) }
-            .eraseToAnyPublisher()
-    }
-}
-
-// MARK: -  API Error
-enum APIError: Error, LocalizedError {
-    case unknown,
-    invalidUrl(String),
-    apiError(reason: String)
-
-    var errorDescription: String? {
-        switch self {
-        case .unknown:
-            return "Unknown error"
-        case .invalidUrl(let url):
-            return "Invalid URL: \(url)"
-        case .apiError(let reason):
-            return reason
-        }
-    }
-}
-
