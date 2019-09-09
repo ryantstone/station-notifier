@@ -51,6 +51,8 @@
 		7C69DFEF22E9B08D00240313 /* CLLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69DFEE22E9B08D00240313 /* CLLocationExtension.swift */; };
 		7C7EB57F22E48E9300AF7418 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EB57E22E48E9300AF7418 /* Station.swift */; };
 		7C93648D2325D58E00E01D12 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93648C2325D58E00E01D12 /* API.swift */; };
+		7C93648F2325D6BF00E01D12 /* TransitSystemActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93648E2325D6BF00E01D12 /* TransitSystemActions.swift */; };
+		7C9364912325D6ED00E01D12 /* NetworkingActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9364902325D6ED00E01D12 /* NetworkingActions.swift */; };
 		7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5022DC078F002E215F /* AppReducer.swift */; };
 		7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5222DC08A0002E215F /* LocationReducer.swift */; };
 		7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5422DC8183002E215F /* CreateStartStation.swift */; };
@@ -127,6 +129,8 @@
 		7C69DFEE22E9B08D00240313 /* CLLocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CLLocationExtension.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Extensions/CLLocationExtension.swift"; sourceTree = "<group>"; };
 		7C7EB57E22E48E9300AF7418 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Station.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Models/Station.swift"; sourceTree = "<group>"; };
 		7C93648C2325D58E00E01D12 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		7C93648E2325D6BF00E01D12 /* TransitSystemActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitSystemActions.swift; sourceTree = "<group>"; };
+		7C9364902325D6ED00E01D12 /* NetworkingActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingActions.swift; sourceTree = "<group>"; };
 		7CAB9D5022DC078F002E215F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5222DC08A0002E215F /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5422DC8183002E215F /* CreateStartStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStartStation.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 			children = (
 				4742F61222DFCA1E00863C6E /* StationActions.swift */,
 				7C69DFE422E7E4B900240313 /* TripActions.swift */,
+				7C93648E2325D6BF00E01D12 /* TransitSystemActions.swift */,
+				7C9364902325D6ED00E01D12 /* NetworkingActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -477,6 +483,7 @@
 				7C19DCCE22E4F24000708071 /* Trip.swift in Sources */,
 				7C4CB5FF2314BD3900CAA3AA /* TransitSystemState.swift in Sources */,
 				4742F61322DFCA1E00863C6E /* StationActions.swift in Sources */,
+				7C9364912325D6ED00E01D12 /* NetworkingActions.swift in Sources */,
 				7C3591B122FACE8400E2B19A /* DocumentsDirectoryWriterService.swift in Sources */,
 				7C19DCCC22E4AD3A00708071 /* StationPickerView.swift in Sources */,
 				7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */,
@@ -490,6 +497,7 @@
 				7C3456E422EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift in Sources */,
 				7C4CB601231532F300CAA3AA /* LoggingMiddleware.swift in Sources */,
 				7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */,
+				7C93648F2325D6BF00E01D12 /* TransitSystemActions.swift in Sources */,
 				7C375958232492F8000B129E /* TransitFeedsResponse.swift in Sources */,
 				7CB6754922DEA99D0095E04B /* SearchField.swift in Sources */,
 				7C45170222D95F210073E398 /* AppState.swift in Sources */,
