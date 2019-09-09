@@ -14,7 +14,7 @@ struct GetLocationsResults: Codable {
 }
 
 // MARK: - Location
-struct Location: Codable, Equatable, Hashable {
+struct Location: Codable, Equatable, Hashable, Identifiable {
     let id: Int
     let pid: Int
     let title: String
@@ -44,11 +44,11 @@ struct GetFeedsResults: Codable {
     let feeds: [Feed]?
 }
 
-struct Feed: Codable, Equatable, Hashable {
-//    enum FeedType: String, Codable {
-//        case gtfsStatic = "gtfs"
-//        case realtime = "gtfsrealtime"
-//    }
+struct Feed: Codable, Equatable, Hashable, Identifiable {
+    enum FeedType: String, Codable {
+        case gtfsStatic = "gtfs"
+        case realtime = "gtfsrealtime"
+    }
 
     let id: String
     let type: String?

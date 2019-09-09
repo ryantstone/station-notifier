@@ -44,7 +44,6 @@
 		7C4CB5FD2314BD0800CAA3AA /* TransitSystemReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CB5FC2314BD0800CAA3AA /* TransitSystemReducer.swift */; };
 		7C4CB5FF2314BD3900CAA3AA /* TransitSystemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CB5FE2314BD3900CAA3AA /* TransitSystemState.swift */; };
 		7C4CB601231532F300CAA3AA /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CB600231532F200CAA3AA /* LoggingMiddleware.swift */; };
-		7C68A4B523115F270040E986 /* GTFS in Frameworks */ = {isa = PBXBuildFile; productRef = 7C68A4B423115F270040E986 /* GTFS */; };
 		7C69DFE522E7E4B900240313 /* TripActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69DFE422E7E4B900240313 /* TripActions.swift */; };
 		7C69DFE722E7E53100240313 /* TripReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69DFE622E7E53100240313 /* TripReducer.swift */; };
 		7C69DFE922E7E55A00240313 /* TripState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69DFE822E7E55A00240313 /* TripState.swift */; };
@@ -53,6 +52,9 @@
 		7C93648D2325D58E00E01D12 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93648C2325D58E00E01D12 /* API.swift */; };
 		7C93648F2325D6BF00E01D12 /* TransitSystemActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93648E2325D6BF00E01D12 /* TransitSystemActions.swift */; };
 		7C9364912325D6ED00E01D12 /* NetworkingActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9364902325D6ED00E01D12 /* NetworkingActions.swift */; };
+		7C9364942325D8A600E01D12 /* TransitFeedsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9364932325D8A600E01D12 /* TransitFeedsPicker.swift */; };
+		7C9364962325DE0F00E01D12 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9364952325DE0F00E01D12 /* Default-568h@2x.png */; };
+		7C9364992325DF3300E01D12 /* GTFS in Frameworks */ = {isa = PBXBuildFile; productRef = 7C9364982325DF3300E01D12 /* GTFS */; };
 		7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5022DC078F002E215F /* AppReducer.swift */; };
 		7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5222DC08A0002E215F /* LocationReducer.swift */; };
 		7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5422DC8183002E215F /* CreateStartStation.swift */; };
@@ -122,7 +124,6 @@
 		7C4CB5FC2314BD0800CAA3AA /* TransitSystemReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitSystemReducer.swift; sourceTree = "<group>"; };
 		7C4CB5FE2314BD3900CAA3AA /* TransitSystemState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitSystemState.swift; sourceTree = "<group>"; };
 		7C4CB600231532F200CAA3AA /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoggingMiddleware.swift; path = ../../LoggingMiddleware.swift; sourceTree = "<group>"; };
-		7C68A4B623115F3C0040E986 /* GTFS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GTFS; path = ../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/GTFS; sourceTree = "<group>"; };
 		7C69DFE422E7E4B900240313 /* TripActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripActions.swift; path = "../../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Flux/Actions/TripActions.swift"; sourceTree = "<group>"; };
 		7C69DFE622E7E53100240313 /* TripReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripReducer.swift; path = "../../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Flux/Reducers/TripReducer.swift"; sourceTree = "<group>"; };
 		7C69DFE822E7E55A00240313 /* TripState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripState.swift; path = "../../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Flux/State/TripState.swift"; sourceTree = "<group>"; };
@@ -131,6 +132,8 @@
 		7C93648C2325D58E00E01D12 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7C93648E2325D6BF00E01D12 /* TransitSystemActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitSystemActions.swift; sourceTree = "<group>"; };
 		7C9364902325D6ED00E01D12 /* NetworkingActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingActions.swift; sourceTree = "<group>"; };
+		7C9364932325D8A600E01D12 /* TransitFeedsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitFeedsPicker.swift; sourceTree = "<group>"; };
+		7C9364952325DE0F00E01D12 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7CAB9D5022DC078F002E215F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5222DC08A0002E215F /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5422DC8183002E215F /* CreateStartStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStartStation.swift; sourceTree = "<group>"; };
@@ -143,7 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C3591AF22F901EE00E2B19A /* SwiftUIFlux in Frameworks */,
-				7C68A4B523115F270040E986 /* GTFS in Frameworks */,
+				7C9364992325DF3300E01D12 /* GTFS in Frameworks */,
 				7C3591CE22FBA32900E2B19A /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +194,7 @@
 		4794CB6F22AA81930065091F = {
 			isa = PBXGroup;
 			children = (
+				7C9364952325DE0F00E01D12 /* Default-568h@2x.png */,
 				4794CB7A22AA81930065091F /* Station Notifier */,
 				4794CB9122AA81950065091F /* Station NotifierTests */,
 				4794CB7922AA81930065091F /* Products */,
@@ -212,10 +216,10 @@
 			children = (
 				7C69DFED22E9B07600240313 /* Extensions */,
 				7C45170022D95F0F0073E398 /* Flux */,
-				7C68A4B623115F3C0040E986 /* GTFS */,
 				4791937C22AA854100EA30E4 /* Managers */,
 				7C480D5B22C98F9F005A10F6 /* Models */,
 				7C3591AA22F706A800E2B19A /* Networking */,
+				4794CB8322AA81950065091F /* Preview Content */,
 				7C9364922325D7DF00E01D12 /* Other */,
 				7C37595423247041000B129E /* Protocols */,
 				4791937922AA83BE00EA30E4 /* Services */,
@@ -325,7 +329,6 @@
 				4794CB8122AA81950065091F /* Assets.xcassets */,
 				4794CB8622AA81950065091F /* LaunchScreen.storyboard */,
 				4794CB8922AA81950065091F /* Info.plist */,
-				4794CB8322AA81950065091F /* Preview Content */,
 				7C3759522324702F000B129E /* Constants.swift */,
 			);
 			path = Other;
@@ -363,6 +366,7 @@
 				47A88E4A22DF40D5009E4CAF /* StationListCell.swift */,
 				7C19DCCB22E4AD3A00708071 /* StationPickerView.swift */,
 				7C4CB5FA2314BC2000CAA3AA /* TransitSystemPicker.swift */,
+				7C9364932325D8A600E01D12 /* TransitFeedsPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -396,7 +400,7 @@
 			packageProductDependencies = (
 				7C3591AE22F901EE00E2B19A /* SwiftUIFlux */,
 				7C3591CD22FBA32900E2B19A /* ZIPFoundation */,
-				7C68A4B423115F270040E986 /* GTFS */,
+				7C9364982325DF3300E01D12 /* GTFS */,
 			);
 			productName = "Station Notifier";
 			productReference = 4794CB7822AA81930065091F /* Station Notifier.app */;
@@ -451,7 +455,7 @@
 			packageReferences = (
 				7C3591AD22F901EE00E2B19A /* XCRemoteSwiftPackageReference "SwiftUIFlux" */,
 				7C3591CC22FBA32900E2B19A /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
-				7C68A4B323115F270040E986 /* XCRemoteSwiftPackageReference "GTFS" */,
+				7C9364972325DF3300E01D12 /* XCRemoteSwiftPackageReference "GTFS" */,
 			);
 			productRefGroup = 4794CB7922AA81930065091F /* Products */;
 			projectDirPath = "";
@@ -469,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4794CB8822AA81950065091F /* LaunchScreen.storyboard in Resources */,
+				7C9364962325DE0F00E01D12 /* Default-568h@2x.png in Resources */,
 				4794CB8522AA81950065091F /* Preview Assets.xcassets in Resources */,
 				4794CB8222AA81950065091F /* Assets.xcassets in Resources */,
 			);
@@ -527,6 +532,7 @@
 				7C93648D2325D58E00E01D12 /* API.swift in Sources */,
 				7C3591AC22F775FD00E2B19A /* TransitFeedsAPI.swift in Sources */,
 				7C3591ED2300ED2100E2B19A /* CollectionExtensions.swift in Sources */,
+				7C9364942325D8A600E01D12 /* TransitFeedsPicker.swift in Sources */,
 				7C69DFE922E7E55A00240313 /* TripState.swift in Sources */,
 				7C3759532324702F000B129E /* Constants.swift in Sources */,
 			);
@@ -686,7 +692,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Station Notifier\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = FV9NULGJG4;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Station Notifier/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Station Notifier/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -706,7 +712,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Station Notifier\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = FV9NULGJG4;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Station Notifier/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Station Notifier/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -807,7 +813,7 @@
 				minimumVersion = 0.9.9;
 			};
 		};
-		7C68A4B323115F270040E986 /* XCRemoteSwiftPackageReference "GTFS" */ = {
+		7C9364972325DF3300E01D12 /* XCRemoteSwiftPackageReference "GTFS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ryantstone/GTFS";
 			requirement = {
@@ -828,9 +834,9 @@
 			package = 7C3591CC22FBA32900E2B19A /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
 			productName = ZIPFoundation;
 		};
-		7C68A4B423115F270040E986 /* GTFS */ = {
+		7C9364982325DF3300E01D12 /* GTFS */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7C68A4B323115F270040E986 /* XCRemoteSwiftPackageReference "GTFS" */;
+			package = 7C9364972325DF3300E01D12 /* XCRemoteSwiftPackageReference "GTFS" */;
 			productName = GTFS;
 		};
 /* End XCSwiftPackageProductDependency section */

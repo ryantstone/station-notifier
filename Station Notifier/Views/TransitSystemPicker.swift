@@ -8,18 +8,19 @@ struct TransitSystemPicker: View {
     var locations: [Location] { return Array(store.state.transitSystemState.locations) }
     
     var body: some View {
-        List(wrappedLocations()) { location in
-            HStack {
-                Text(location.wrapped.name)
-                    .onTapGesture { self.dispatch(location: location.wrapped) }
-            }
-        }.onAppear {
-            self.store.dispatch(action: GetLocationsAction())
-        }.navigationBarTitle("Locations")
+        NavigationView {
+            List(locations) { location in
+                HStack {
+                    NavigationLink(location.title, destination: TransitFeedsPicker(locationId: location.id)).navigationBarTitle("Services")
+                }
+            }.navigationBarTitle("Locations")
+        }.onAppear { self.store.dispatch(action: GetLocationsAction()) }
     }
     
     func wrappedLocations() -> [IdentifiableWrapper<Location>] {
-        return locations.map { IdentifiableWrapper(wrapped: $0)}
+        return locations
+            .sorted { $0.title < $1.title }
+            .map { IdentifiableWrapper(wrapped: $0)}
     }
     
     func dispatch(location: Location) {

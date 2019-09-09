@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUIFlux
 
 // MARK: - Actions
 // MARK: Get Locations Action
