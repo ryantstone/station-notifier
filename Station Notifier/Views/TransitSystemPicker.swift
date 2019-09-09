@@ -5,7 +5,7 @@ import SwiftUIFlux
 struct TransitSystemPicker: View {
     
     @EnvironmentObject private var store: Store<AppState>
-    var locations: [Location] { return store.state.transitSystemState.locations }
+    var locations: [Location] { return Array(store.state.transitSystemState.locations) }
     
     var body: some View {
         List(wrappedLocations()) { location in
@@ -15,7 +15,7 @@ struct TransitSystemPicker: View {
             }
         }.onAppear {
             self.store.dispatch(action: GetLocationsAction())
-        }
+        }.navigationBarTitle("Locations")
     }
     
     func wrappedLocations() -> [IdentifiableWrapper<Location>] {

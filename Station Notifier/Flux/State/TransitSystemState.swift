@@ -3,7 +3,7 @@ import Combine
 import SwiftUIFlux
 
 struct TransitSystemState {
-    var locations = [Location]()
+    var locations = Set<Location>()
 }
 
 struct SetLocationsAction: Action {
@@ -12,6 +12,11 @@ struct SetLocationsAction: Action {
     init(locations: [Location]) {
         self.locations = locations
     }
+}
+
+struct SetFeedsAction: Action {
+    let location: Location
+    let feeds: [Feed]
 }
 
 // MARK: - Actions

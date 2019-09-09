@@ -21,6 +21,7 @@ class TransitFeedsAPI {
         self.api = baseAPI
     }
 
+    // MARK: - Get Feeds
     func getFeeds(location: Location) {
         let item = URLQueryItem(name: "location", value: String(describing: location.id))
         guard let url = buildURLComponents(path: .getFeeds, queryItems: [item]) else { return }
@@ -29,10 +30,13 @@ class TransitFeedsAPI {
             .sink(receiveCompletion: { (error) in
                 print(error)
             }, receiveValue: { results in
-                print(results)
+                results.results?.feeds.flatMap { feeds in
+                    store.dispatch(action: SetFeedsAction(location: location, feeds: feeds))
+                }
             }).store(in: &cancellables)
     }
-    
+
+    // MARK: - Get Locations
     func getLocations() {
         guard let url = buildURLComponents(path: .getLocations) else { return }
        
@@ -45,11 +49,9 @@ class TransitFeedsAPI {
             .store(in: &cancellables)
     }
     
+    // MARK: - Private Functions
     private func makeRequest<T: Codable>(_ type: T.Type, url: URL) -> AnyPublisher<T, APIError> {
         return api.getData(url)
-            .map {
-                $0
-            }
             .decode(type: T.self, decoder: JSONDecoder())
             .mapError { APIError.apiError(reason: $0.localizedDescription) }
             .eraseToAnyPublisher()
