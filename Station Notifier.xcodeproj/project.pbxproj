@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4791937B22AA83D400EA30E4 /* StationSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791937A22AA83D400EA30E4 /* StationSearchService.swift */; };
+		4742F61022DFC94F00863C6E /* StationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742F60F22DFC94F00863C6E /* StationState.swift */; };
+		4742F61322DFCA1E00863C6E /* StationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742F61222DFCA1E00863C6E /* StationActions.swift */; };
+		4742F61522DFCA8600863C6E /* StationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742F61422DFCA8600863C6E /* StationReducer.swift */; };
 		4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791937D22AA854C00EA30E4 /* LocationManager.swift */; };
 		4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794CB7B22AA81930065091F /* AppDelegate.swift */; };
 		4794CB7E22AA81930065091F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794CB7D22AA81930065091F /* SceneDelegate.swift */; };
@@ -16,6 +18,42 @@
 		4794CB8522AA81950065091F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4794CB8422AA81950065091F /* Preview Assets.xcassets */; };
 		4794CB8822AA81950065091F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4794CB8622AA81950065091F /* LaunchScreen.storyboard */; };
 		4794CB9322AA81950065091F /* Station_NotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794CB9222AA81950065091F /* Station_NotifierTests.swift */; };
+		47A88E4B22DF40D5009E4CAF /* StationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A88E4A22DF40D5009E4CAF /* StationListCell.swift */; };
+		7C19DCCC22E4AD3A00708071 /* StationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19DCCB22E4AD3A00708071 /* StationPickerView.swift */; };
+		7C19DCCE22E4F24000708071 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19DCCD22E4F24000708071 /* Trip.swift */; };
+		7C19DCD022E4F5BB00708071 /* TitledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19DCCF22E4F5BB00708071 /* TitledButton.swift */; };
+		7C3456E022EE0B0B00B341B0 /* TripReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456DF22EE0B0B00B341B0 /* TripReducerTests.swift */; };
+		7C3456E222EE29E200B341B0 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E122EE29E200B341B0 /* Mocks.swift */; };
+		7C3456E422EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */; };
+		7C3456E622F056F200B341B0 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E522F056F200B341B0 /* PermissionManager.swift */; };
+		7C3591AC22F775FD00E2B19A /* TransitFeedsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591AB22F775FD00E2B19A /* TransitFeedsAPI.swift */; };
+		7C3591AF22F901EE00E2B19A /* SwiftUIFlux in Frameworks */ = {isa = PBXBuildFile; productRef = 7C3591AE22F901EE00E2B19A /* SwiftUIFlux */; };
+		7C3591B122FACE8400E2B19A /* DocumentsDirectoryWriterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591B022FACE8400E2B19A /* DocumentsDirectoryWriterService.swift */; };
+		7C3591CE22FBA32900E2B19A /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 7C3591CD22FBA32900E2B19A /* ZIPFoundation */; };
+		7C3591D022FBABF100E2B19A /* TransitSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591CF22FBABF100E2B19A /* TransitSystem.swift */; };
+		7C3591ED2300ED2100E2B19A /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591EC2300ED2100E2B19A /* CollectionExtensions.swift */; };
+		7C3591EF2300F42A00E2B19A /* GTFSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591EE2300F42A00E2B19A /* GTFSService.swift */; };
+		7C3591F12300F4E200E2B19A /* UnzippingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3591F02300F4E200E2B19A /* UnzippingService.swift */; };
+		7C3759532324702F000B129E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3759522324702F000B129E /* Constants.swift */; };
+		7C37595623247050000B129E /* ConstantsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37595523247050000B129E /* ConstantsProtocol.swift */; };
+		7C375958232492F8000B129E /* TransitFeedsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C375957232492F8000B129E /* TransitFeedsResponse.swift */; };
+		7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C43D43B22D5E819008AC918 /* ContentViewModel.swift */; };
+		7C45170222D95F210073E398 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45170122D95F210073E398 /* AppState.swift */; };
+		7C45170422D95F430073E398 /* LocationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C45170322D95F430073E398 /* LocationState.swift */; };
+		7C4CB5FB2314BC2000CAA3AA /* TransitSystemPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CB5FA2314BC2000CAA3AA /* TransitSystemPicker.swift */; };
+		7C4CB5FD2314BD0800CAA3AA /* TransitSystemReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CB5FC2314BD0800CAA3AA /* TransitSystemReducer.swift */; };
+		7C4CB5FF2314BD3900CAA3AA /* TransitSystemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CB5FE2314BD3900CAA3AA /* TransitSystemState.swift */; };
+		7C4CB601231532F300CAA3AA /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4CB600231532F200CAA3AA /* LoggingMiddleware.swift */; };
+		7C68A4B523115F270040E986 /* GTFS in Frameworks */ = {isa = PBXBuildFile; productRef = 7C68A4B423115F270040E986 /* GTFS */; };
+		7C69DFE522E7E4B900240313 /* TripActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69DFE422E7E4B900240313 /* TripActions.swift */; };
+		7C69DFE722E7E53100240313 /* TripReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69DFE622E7E53100240313 /* TripReducer.swift */; };
+		7C69DFE922E7E55A00240313 /* TripState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69DFE822E7E55A00240313 /* TripState.swift */; };
+		7C69DFEF22E9B08D00240313 /* CLLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69DFEE22E9B08D00240313 /* CLLocationExtension.swift */; };
+		7C7EB57F22E48E9300AF7418 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EB57E22E48E9300AF7418 /* Station.swift */; };
+		7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5022DC078F002E215F /* AppReducer.swift */; };
+		7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5222DC08A0002E215F /* LocationReducer.swift */; };
+		7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5422DC8183002E215F /* CreateStartStation.swift */; };
+		7CB6754922DEA99D0095E04B /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB6754822DEA99D0095E04B /* SearchField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,8 +66,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7C3591EB2300603400E2B19A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		4791937A22AA83D400EA30E4 /* StationSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSearchService.swift; sourceTree = "<group>"; };
+		4742F60F22DFC94F00863C6E /* StationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationState.swift; sourceTree = "<group>"; };
+		4742F61222DFCA1E00863C6E /* StationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationActions.swift; sourceTree = "<group>"; };
+		4742F61422DFCA8600863C6E /* StationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationReducer.swift; sourceTree = "<group>"; };
 		4791937D22AA854C00EA30E4 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4794CB7822AA81930065091F /* Station Notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Station Notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4794CB7B22AA81930065091F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +95,40 @@
 		4794CB8E22AA81950065091F /* Station NotifierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Station NotifierTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4794CB9222AA81950065091F /* Station_NotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station_NotifierTests.swift; sourceTree = "<group>"; };
 		4794CB9422AA81950065091F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47A88E4A22DF40D5009E4CAF /* StationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListCell.swift; sourceTree = "<group>"; };
+		7C19DCCB22E4AD3A00708071 /* StationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StationPickerView.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Views/StationPickerView.swift"; sourceTree = "<group>"; };
+		7C19DCCD22E4F24000708071 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Trip.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Models/Trip.swift"; sourceTree = "<group>"; };
+		7C19DCCF22E4F5BB00708071 /* TitledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitledButton.swift; path = "../../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Views/Shared/TitledButton.swift"; sourceTree = "<group>"; };
+		7C3456DF22EE0B0B00B341B0 /* TripReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripReducerTests.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station NotifierTests/Reducers/TripReducerTests.swift"; sourceTree = "<group>"; };
+		7C3456E122EE29E200B341B0 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Mocks.swift; path = "../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station NotifierTests/Mocks.swift"; sourceTree = "<group>"; };
+		7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomStringConvertibleExtension.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Extensions/CustomStringConvertibleExtension.swift"; sourceTree = "<group>"; };
+		7C3456E522F056F200B341B0 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PermissionManager.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Managers/PermissionManager.swift"; sourceTree = "<group>"; };
+		7C3591AB22F775FD00E2B19A /* TransitFeedsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitFeedsAPI.swift; sourceTree = "<group>"; };
+		7C3591B022FACE8400E2B19A /* DocumentsDirectoryWriterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsDirectoryWriterService.swift; sourceTree = "<group>"; };
+		7C3591CF22FBABF100E2B19A /* TransitSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitSystem.swift; sourceTree = "<group>"; };
+		7C3591EC2300ED2100E2B19A /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
+		7C3591EE2300F42A00E2B19A /* GTFSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTFSService.swift; sourceTree = "<group>"; };
+		7C3591F02300F4E200E2B19A /* UnzippingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnzippingService.swift; sourceTree = "<group>"; };
+		7C3759522324702F000B129E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7C37595523247050000B129E /* ConstantsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsProtocol.swift; sourceTree = "<group>"; };
+		7C375957232492F8000B129E /* TransitFeedsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitFeedsResponse.swift; sourceTree = "<group>"; };
+		7C43D43B22D5E819008AC918 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		7C45170122D95F210073E398 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		7C45170322D95F430073E398 /* LocationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationState.swift; sourceTree = "<group>"; };
+		7C4CB5FA2314BC2000CAA3AA /* TransitSystemPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitSystemPicker.swift; sourceTree = "<group>"; };
+		7C4CB5FC2314BD0800CAA3AA /* TransitSystemReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitSystemReducer.swift; sourceTree = "<group>"; };
+		7C4CB5FE2314BD3900CAA3AA /* TransitSystemState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitSystemState.swift; sourceTree = "<group>"; };
+		7C4CB600231532F200CAA3AA /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoggingMiddleware.swift; path = ../../LoggingMiddleware.swift; sourceTree = "<group>"; };
+		7C68A4B623115F3C0040E986 /* GTFS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GTFS; path = ../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/GTFS; sourceTree = "<group>"; };
+		7C69DFE422E7E4B900240313 /* TripActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripActions.swift; path = "../../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Flux/Actions/TripActions.swift"; sourceTree = "<group>"; };
+		7C69DFE622E7E53100240313 /* TripReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripReducer.swift; path = "../../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Flux/Reducers/TripReducer.swift"; sourceTree = "<group>"; };
+		7C69DFE822E7E55A00240313 /* TripState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripState.swift; path = "../../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Flux/State/TripState.swift"; sourceTree = "<group>"; };
+		7C69DFEE22E9B08D00240313 /* CLLocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CLLocationExtension.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Extensions/CLLocationExtension.swift"; sourceTree = "<group>"; };
+		7C7EB57E22E48E9300AF7418 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Station.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Models/Station.swift"; sourceTree = "<group>"; };
+		7CAB9D5022DC078F002E215F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		7CAB9D5222DC08A0002E215F /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
+		7CAB9D5422DC8183002E215F /* CreateStartStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStartStation.swift; sourceTree = "<group>"; };
+		7CB6754822DEA99D0095E04B /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +136,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C3591AF22F901EE00E2B19A /* SwiftUIFlux in Frameworks */,
+				7C68A4B523115F270040E986 /* GTFS in Frameworks */,
+				7C3591CE22FBA32900E2B19A /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,10 +152,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4742F61122DFCA0C00863C6E /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				4742F61222DFCA1E00863C6E /* StationActions.swift */,
+				7C69DFE422E7E4B900240313 /* TripActions.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		4791937922AA83BE00EA30E4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4791937A22AA83D400EA30E4 /* StationSearchService.swift */,
+				7C3591B022FACE8400E2B19A /* DocumentsDirectoryWriterService.swift */,
+				7C3591EE2300F42A00E2B19A /* GTFSService.swift */,
+				7C3591F02300F4E200E2B19A /* UnzippingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -74,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				4791937D22AA854C00EA30E4 /* LocationManager.swift */,
+				7C3456E522F056F200B341B0 /* PermissionManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -84,6 +186,7 @@
 				4794CB7A22AA81930065091F /* Station Notifier */,
 				4794CB9122AA81950065091F /* Station NotifierTests */,
 				4794CB7922AA81930065091F /* Products */,
+				7C3591E022FF083C00E2B19A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +202,13 @@
 		4794CB7A22AA81930065091F /* Station Notifier */ = {
 			isa = PBXGroup;
 			children = (
+				7C37595423247041000B129E /* Protocols */,
+				7C68A4B623115F3C0040E986 /* GTFS */,
+				7C3591AA22F706A800E2B19A /* Networking */,
+				7C69DFED22E9B07600240313 /* Extensions */,
+				7CB6754622DEA9600095E04B /* Views */,
+				7C45170022D95F0F0073E398 /* Flux */,
+				7C480D5B22C98F9F005A10F6 /* Models */,
 				4791937C22AA854100EA30E4 /* Managers */,
 				4791937922AA83BE00EA30E4 /* Services */,
 				4794CB7B22AA81930065091F /* AppDelegate.swift */,
@@ -108,6 +218,7 @@
 				4794CB8622AA81950065091F /* LaunchScreen.storyboard */,
 				4794CB8922AA81950065091F /* Info.plist */,
 				4794CB8322AA81950065091F /* Preview Content */,
+				7C3759522324702F000B129E /* Constants.swift */,
 			);
 			path = "Station Notifier";
 			sourceTree = "<group>";
@@ -123,10 +234,129 @@
 		4794CB9122AA81950065091F /* Station NotifierTests */ = {
 			isa = PBXGroup;
 			children = (
+				7C3456DE22EDC6C800B341B0 /* Reducers */,
 				4794CB9222AA81950065091F /* Station_NotifierTests.swift */,
 				4794CB9422AA81950065091F /* Info.plist */,
+				7C3456E122EE29E200B341B0 /* Mocks.swift */,
 			);
 			path = "Station NotifierTests";
+			sourceTree = "<group>";
+		};
+		7C3456DE22EDC6C800B341B0 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				7C3456DF22EE0B0B00B341B0 /* TripReducerTests.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		7C3591AA22F706A800E2B19A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7C3591AB22F775FD00E2B19A /* TransitFeedsAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7C3591E022FF083C00E2B19A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C37595423247041000B129E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7C37595523247050000B129E /* ConstantsProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7C45170022D95F0F0073E398 /* Flux */ = {
+			isa = PBXGroup;
+			children = (
+				7C69DFEA22E92E9400240313 /* Middleware */,
+				4742F61122DFCA0C00863C6E /* Actions */,
+				7CAB9D4F22DC0778002E215F /* Reducers */,
+				7CAB9D4E22DC076F002E215F /* State */,
+				7CAB9D5422DC8183002E215F /* CreateStartStation.swift */,
+			);
+			path = Flux;
+			sourceTree = "<group>";
+		};
+		7C480D5B22C98F9F005A10F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7C43D43B22D5E819008AC918 /* ContentViewModel.swift */,
+				7C7EB57E22E48E9300AF7418 /* Station.swift */,
+				7C19DCCD22E4F24000708071 /* Trip.swift */,
+				7C3591CF22FBABF100E2B19A /* TransitSystem.swift */,
+				7C375957232492F8000B129E /* TransitFeedsResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7C69DFEA22E92E9400240313 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				7C4CB600231532F200CAA3AA /* LoggingMiddleware.swift */,
+			);
+			path = Middleware;
+			sourceTree = "<group>";
+		};
+		7C69DFED22E9B07600240313 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C69DFEE22E9B08D00240313 /* CLLocationExtension.swift */,
+				7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */,
+				7C3591EC2300ED2100E2B19A /* CollectionExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7CAB9D4E22DC076F002E215F /* State */ = {
+			isa = PBXGroup;
+			children = (
+				7C45170322D95F430073E398 /* LocationState.swift */,
+				7C45170122D95F210073E398 /* AppState.swift */,
+				4742F60F22DFC94F00863C6E /* StationState.swift */,
+				7C69DFE822E7E55A00240313 /* TripState.swift */,
+				7C4CB5FE2314BD3900CAA3AA /* TransitSystemState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		7CAB9D4F22DC0778002E215F /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				7CAB9D5022DC078F002E215F /* AppReducer.swift */,
+				7CAB9D5222DC08A0002E215F /* LocationReducer.swift */,
+				4742F61422DFCA8600863C6E /* StationReducer.swift */,
+				7C69DFE622E7E53100240313 /* TripReducer.swift */,
+				7C4CB5FC2314BD0800CAA3AA /* TransitSystemReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		7CB6754622DEA9600095E04B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7CB6754722DEA9870095E04B /* Shared */,
+				47A88E4A22DF40D5009E4CAF /* StationListCell.swift */,
+				7C19DCCB22E4AD3A00708071 /* StationPickerView.swift */,
+				7C4CB5FA2314BC2000CAA3AA /* TransitSystemPicker.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7CB6754722DEA9870095E04B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7CB6754822DEA99D0095E04B /* SearchField.swift */,
+				7C19DCCF22E4F5BB00708071 /* TitledButton.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,12 +369,18 @@
 				4794CB7422AA81930065091F /* Sources */,
 				4794CB7522AA81930065091F /* Frameworks */,
 				4794CB7622AA81930065091F /* Resources */,
+				7C3591EB2300603400E2B19A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Station Notifier";
+			packageProductDependencies = (
+				7C3591AE22F901EE00E2B19A /* SwiftUIFlux */,
+				7C3591CD22FBA32900E2B19A /* ZIPFoundation */,
+				7C68A4B423115F270040E986 /* GTFS */,
+			);
 			productName = "Station Notifier";
 			productReference = 4794CB7822AA81930065091F /* Station Notifier.app */;
 			productType = "com.apple.product-type.application";
@@ -195,6 +431,11 @@
 				Base,
 			);
 			mainGroup = 4794CB6F22AA81930065091F;
+			packageReferences = (
+				7C3591AD22F901EE00E2B19A /* XCRemoteSwiftPackageReference "SwiftUIFlux" */,
+				7C3591CC22FBA32900E2B19A /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+				7C68A4B323115F270040E986 /* XCRemoteSwiftPackageReference "GTFS" */,
+			);
 			productRefGroup = 4794CB7922AA81930065091F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -230,11 +471,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C19DCCE22E4F24000708071 /* Trip.swift in Sources */,
+				7C4CB5FF2314BD3900CAA3AA /* TransitSystemState.swift in Sources */,
+				4742F61322DFCA1E00863C6E /* StationActions.swift in Sources */,
+				7C3591B122FACE8400E2B19A /* DocumentsDirectoryWriterService.swift in Sources */,
+				7C19DCCC22E4AD3A00708071 /* StationPickerView.swift in Sources */,
+				7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */,
+				7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */,
+				7C3591F12300F4E200E2B19A /* UnzippingService.swift in Sources */,
 				4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */,
+				7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */,
 				4794CB7E22AA81930065091F /* SceneDelegate.swift in Sources */,
+				7C69DFEF22E9B08D00240313 /* CLLocationExtension.swift in Sources */,
+				7C4CB5FB2314BC2000CAA3AA /* TransitSystemPicker.swift in Sources */,
+				7C3456E422EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift in Sources */,
+				7C4CB601231532F300CAA3AA /* LoggingMiddleware.swift in Sources */,
+				7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */,
+				7C375958232492F8000B129E /* TransitFeedsResponse.swift in Sources */,
+				7CB6754922DEA99D0095E04B /* SearchField.swift in Sources */,
+				7C45170222D95F210073E398 /* AppState.swift in Sources */,
+				7C45170422D95F430073E398 /* LocationState.swift in Sources */,
+				7C19DCD022E4F5BB00708071 /* TitledButton.swift in Sources */,
 				4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */,
-				4791937B22AA83D400EA30E4 /* StationSearchService.swift in Sources */,
+				7C7EB57F22E48E9300AF7418 /* Station.swift in Sources */,
+				7C69DFE722E7E53100240313 /* TripReducer.swift in Sources */,
+				7C3591D022FBABF100E2B19A /* TransitSystem.swift in Sources */,
+				7C69DFE522E7E4B900240313 /* TripActions.swift in Sources */,
+				4742F61522DFCA8600863C6E /* StationReducer.swift in Sources */,
+				4742F61022DFC94F00863C6E /* StationState.swift in Sources */,
+				7C3456E622F056F200B341B0 /* PermissionManager.swift in Sources */,
+				7C37595623247050000B129E /* ConstantsProtocol.swift in Sources */,
+				7C4CB5FD2314BD0800CAA3AA /* TransitSystemReducer.swift in Sources */,
 				4794CB8022AA81930065091F /* ContentView.swift in Sources */,
+				7C3591EF2300F42A00E2B19A /* GTFSService.swift in Sources */,
+				47A88E4B22DF40D5009E4CAF /* StationListCell.swift in Sources */,
+				7C3591AC22F775FD00E2B19A /* TransitFeedsAPI.swift in Sources */,
+				7C3591ED2300ED2100E2B19A /* CollectionExtensions.swift in Sources */,
+				7C69DFE922E7E55A00240313 /* TripState.swift in Sources */,
+				7C3759532324702F000B129E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +517,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4794CB9322AA81950065091F /* Station_NotifierTests.swift in Sources */,
+				7C3456E022EE0B0B00B341B0 /* TripReducerTests.swift in Sources */,
+				7C3456E222EE29E200B341B0 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +664,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Station Notifier\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = FV9NULGJG4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Station Notifier/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -407,6 +684,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Station Notifier\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = FV9NULGJG4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Station Notifier/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -491,6 +769,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C3591AD22F901EE00E2B19A /* XCRemoteSwiftPackageReference "SwiftUIFlux" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Dimillian/SwiftUIFlux";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.5;
+			};
+		};
+		7C3591CC22FBA32900E2B19A /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.9;
+			};
+		};
+		7C68A4B323115F270040E986 /* XCRemoteSwiftPackageReference "GTFS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ryantstone/GTFS";
+			requirement = {
+				branch = feature/importer;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C3591AE22F901EE00E2B19A /* SwiftUIFlux */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C3591AD22F901EE00E2B19A /* XCRemoteSwiftPackageReference "SwiftUIFlux" */;
+			productName = SwiftUIFlux;
+		};
+		7C3591CD22FBA32900E2B19A /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C3591CC22FBA32900E2B19A /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+		7C68A4B423115F270040E986 /* GTFS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C68A4B323115F270040E986 /* XCRemoteSwiftPackageReference "GTFS" */;
+			productName = GTFS;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4794CB7022AA81930065091F /* Project object */;
 }

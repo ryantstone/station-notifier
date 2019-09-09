@@ -1,32 +1,34 @@
 import Foundation
 import CoreLocation
 import Combine
+import MapKit
+import SwiftUIFlux
 
 class LocationManager: NSObject {
 
-    static let shared = LocationManager()
-
     let manager = CLLocationManager()
-    let currentLocation = Publisher<CLLocation>()
+    var store: Store<AppState>
 
-    typealias locationManagerCompletion = (CLLocation) -> ()
-
-    override init() {
-        super.init()
-        manager.delegate = self
+    init(store: Store<AppState>) {
         manager.distanceFilter = kCLDistanceFilterNone
         manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        self.store = store
+
+        super.init()
+
+        manager.delegate = self
+        getCurrentLocation()
     }
 
-    func getCurrentLocation(completion: locationManagerCompletion) {
+
+    func getCurrentLocation() {
         if  CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
                 manager.requestWhenInUseAuthorization()
             case .authorizedWhenInUse, .authorizedAlways:
-                manager.requestLocation()
+                manager.startUpdatingLocation()
             case .restricted, .denied:
-                // FIXME: Add some sort of pop up notifying that the app won' t work
                 print("Location restricted/denied")
             @unknown default:
                fatalError("Unkown new state")
@@ -35,19 +37,19 @@ class LocationManager: NSObject {
     }
 }
 
+enum LocationError: Error {
+    case permissionDenied
+}
+
 // MARK: - Location Manager Delegate
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
 
+        store.dispatch(action: AddLocationAction(location: location))
     }
 }
 
-struct CurrentLocation: Publisher {
-    public typealias Failure = Error
-    public typealias Output =  CLLocation
-
-    public func receive<S>(on scheduler: S, options: S.SchedulerOptions? = nil) -> Publishers.ReceiveOn<CurrentLocation, S> where S : Scheduler {
-        <#code#>
-    }
+struct AddLocationAction: Action {
+    let location: CLLocation
 }

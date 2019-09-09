@@ -1,23 +1,25 @@
-//
-//  ContentView.swift
-//  Station Notifier
-//
-//  Created by Ryan Stone on 6/7/19.
-//  Copyright © 2019 Ryan Stone. All rights reserved.
-//
-
 import SwiftUI
+import Combine
+import CoreLocation
+import SwiftUIFlux
 
 struct ContentView : View {
+    
+    @EnvironmentObject var store: Store<AppState>
+    var stations: [Station] {
+        store.state.stationState.stationList
+    }
+    let wrapper = SearchWrapper()
+    
     var body: some View {
-        Text("Hello World")
+        StationPickerView(stationList: stations)
     }
 }
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(store)
     }
 }
 #endif
