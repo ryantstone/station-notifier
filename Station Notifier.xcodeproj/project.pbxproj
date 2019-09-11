@@ -17,14 +17,12 @@
 		4794CB8222AA81950065091F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4794CB8122AA81950065091F /* Assets.xcassets */; };
 		4794CB8522AA81950065091F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4794CB8422AA81950065091F /* Preview Assets.xcassets */; };
 		4794CB8822AA81950065091F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4794CB8622AA81950065091F /* LaunchScreen.storyboard */; };
-		4794CB9322AA81950065091F /* Station_NotifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794CB9222AA81950065091F /* Station_NotifierTests.swift */; };
 		47A88E4B22DF40D5009E4CAF /* StationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A88E4A22DF40D5009E4CAF /* StationListCell.swift */; };
 		7C19DCCC22E4AD3A00708071 /* StationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19DCCB22E4AD3A00708071 /* StationPickerView.swift */; };
 		7C19DCCE22E4F24000708071 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19DCCD22E4F24000708071 /* Trip.swift */; };
 		7C19DCD022E4F5BB00708071 /* TitledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19DCCF22E4F5BB00708071 /* TitledButton.swift */; };
 		7C30BB3823287A1400EE77ED /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C30BB3723287A1400EE77ED /* UserDefaultStorage.swift */; };
 		7C30BB3D2328F93700EE77ED /* StationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C30BB3C2328F93700EE77ED /* StationTests.swift */; };
-		7C3456E022EE0B0B00B341B0 /* TripReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456DF22EE0B0B00B341B0 /* TripReducerTests.swift */; };
 		7C3456E222EE29E200B341B0 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E122EE29E200B341B0 /* Mocks.swift */; };
 		7C3456E422EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */; };
 		7C3456E622F056F200B341B0 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E522F056F200B341B0 /* PermissionManager.swift */; };
@@ -102,7 +100,6 @@
 		4794CB8722AA81950065091F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4794CB8922AA81950065091F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4794CB8E22AA81950065091F /* Station NotifierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Station NotifierTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4794CB9222AA81950065091F /* Station_NotifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station_NotifierTests.swift; sourceTree = "<group>"; };
 		4794CB9422AA81950065091F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47A88E4A22DF40D5009E4CAF /* StationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListCell.swift; sourceTree = "<group>"; };
 		7C19DCCB22E4AD3A00708071 /* StationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationPickerView.swift; sourceTree = "<group>"; };
@@ -110,7 +107,6 @@
 		7C19DCCF22E4F5BB00708071 /* TitledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledButton.swift; sourceTree = "<group>"; };
 		7C30BB3723287A1400EE77ED /* UserDefaultStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultStorage.swift; path = "New Group/UserDefaultStorage.swift"; sourceTree = "<group>"; };
 		7C30BB3C2328F93700EE77ED /* StationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTests.swift; sourceTree = "<group>"; };
-		7C3456DF22EE0B0B00B341B0 /* TripReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripReducerTests.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station NotifierTests/Reducers/TripReducerTests.swift"; sourceTree = "<group>"; };
 		7C3456E122EE29E200B341B0 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStringConvertibleExtension.swift; sourceTree = "<group>"; };
 		7C3456E522F056F200B341B0 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
@@ -250,7 +246,6 @@
 			children = (
 				7C30BB3723287A1400EE77ED /* UserDefaultStorage.swift */,
 				7C3456DE22EDC6C800B341B0 /* Reducers */,
-				4794CB9222AA81950065091F /* Station_NotifierTests.swift */,
 				4794CB9422AA81950065091F /* Info.plist */,
 				7C3456E122EE29E200B341B0 /* Mocks.swift */,
 				7C30BB3C2328F93700EE77ED /* StationTests.swift */,
@@ -261,7 +256,6 @@
 		7C3456DE22EDC6C800B341B0 /* Reducers */ = {
 			isa = PBXGroup;
 			children = (
-				7C3456DF22EE0B0B00B341B0 /* TripReducerTests.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -558,8 +552,6 @@
 			files = (
 				7C30BB3823287A1400EE77ED /* UserDefaultStorage.swift in Sources */,
 				7C30BB3D2328F93700EE77ED /* StationTests.swift in Sources */,
-				4794CB9322AA81950065091F /* Station_NotifierTests.swift in Sources */,
-				7C3456E022EE0B0B00B341B0 /* TripReducerTests.swift in Sources */,
 				7C3456E222EE29E200B341B0 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
