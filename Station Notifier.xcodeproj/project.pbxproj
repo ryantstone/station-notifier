@@ -22,6 +22,8 @@
 		7C19DCCC22E4AD3A00708071 /* StationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19DCCB22E4AD3A00708071 /* StationPickerView.swift */; };
 		7C19DCCE22E4F24000708071 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19DCCD22E4F24000708071 /* Trip.swift */; };
 		7C19DCD022E4F5BB00708071 /* TitledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19DCCF22E4F5BB00708071 /* TitledButton.swift */; };
+		7C30BB3823287A1400EE77ED /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C30BB3723287A1400EE77ED /* UserDefaultStorage.swift */; };
+		7C30BB3D2328F93700EE77ED /* StationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C30BB3C2328F93700EE77ED /* StationTests.swift */; };
 		7C3456E022EE0B0B00B341B0 /* TripReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456DF22EE0B0B00B341B0 /* TripReducerTests.swift */; };
 		7C3456E222EE29E200B341B0 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E122EE29E200B341B0 /* Mocks.swift */; };
 		7C3456E422EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */; };
@@ -55,7 +57,7 @@
 		7C9364942325D8A600E01D12 /* TransitFeedsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9364932325D8A600E01D12 /* TransitFeedsPicker.swift */; };
 		7C9364962325DE0F00E01D12 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9364952325DE0F00E01D12 /* Default-568h@2x.png */; };
 		7C9364992325DF3300E01D12 /* GTFS in Frameworks */ = {isa = PBXBuildFile; productRef = 7C9364982325DF3300E01D12 /* GTFS */; };
-		7C93649B2327260400E01D12 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93649A2327260400E01D12 /* StorageService.swift */; };
+		7C93649B2327260400E01D12 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93649A2327260400E01D12 /* UserDefaultStorage.swift */; };
 		7C9364A02327300100E01D12 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93649F2327300100E01D12 /* Persistable.swift */; };
 		7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5022DC078F002E215F /* AppReducer.swift */; };
 		7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5222DC08A0002E215F /* LocationReducer.swift */; };
@@ -106,6 +108,8 @@
 		7C19DCCB22E4AD3A00708071 /* StationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StationPickerView.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Views/StationPickerView.swift"; sourceTree = "<group>"; };
 		7C19DCCD22E4F24000708071 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Trip.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Models/Trip.swift"; sourceTree = "<group>"; };
 		7C19DCCF22E4F5BB00708071 /* TitledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitledButton.swift; path = "../../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Views/Shared/TitledButton.swift"; sourceTree = "<group>"; };
+		7C30BB3723287A1400EE77ED /* UserDefaultStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultStorage.swift; path = "../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station NotifierTests/Services/UserDefaultStorage.swift"; sourceTree = "<group>"; };
+		7C30BB3C2328F93700EE77ED /* StationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTests.swift; sourceTree = "<group>"; };
 		7C3456DF22EE0B0B00B341B0 /* TripReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripReducerTests.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station NotifierTests/Reducers/TripReducerTests.swift"; sourceTree = "<group>"; };
 		7C3456E122EE29E200B341B0 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Mocks.swift; path = "../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station NotifierTests/Mocks.swift"; sourceTree = "<group>"; };
 		7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomStringConvertibleExtension.swift; path = "../../../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/station-notifier/Station Notifier/Extensions/CustomStringConvertibleExtension.swift"; sourceTree = "<group>"; };
@@ -136,7 +140,7 @@
 		7C9364902325D6ED00E01D12 /* NetworkingActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingActions.swift; sourceTree = "<group>"; };
 		7C9364932325D8A600E01D12 /* TransitFeedsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitFeedsPicker.swift; sourceTree = "<group>"; };
 		7C9364952325DE0F00E01D12 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		7C93649A2327260400E01D12 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		7C93649A2327260400E01D12 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		7C93649F2327300100E01D12 /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
 		7CAB9D5022DC078F002E215F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5222DC08A0002E215F /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
@@ -182,7 +186,7 @@
 				7C3591B022FACE8400E2B19A /* DocumentsDirectoryWriterService.swift */,
 				7C3591EE2300F42A00E2B19A /* GTFSService.swift */,
 				7C3591F02300F4E200E2B19A /* UnzippingService.swift */,
-				7C93649A2327260400E01D12 /* StorageService.swift */,
+				7C93649A2327260400E01D12 /* UserDefaultStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -244,10 +248,12 @@
 		4794CB9122AA81950065091F /* Station NotifierTests */ = {
 			isa = PBXGroup;
 			children = (
+				7C30BB3723287A1400EE77ED /* UserDefaultStorage.swift */,
 				7C3456DE22EDC6C800B341B0 /* Reducers */,
 				4794CB9222AA81950065091F /* Station_NotifierTests.swift */,
 				4794CB9422AA81950065091F /* Info.plist */,
 				7C3456E122EE29E200B341B0 /* Mocks.swift */,
+				7C30BB3C2328F93700EE77ED /* StationTests.swift */,
 			);
 			path = "Station NotifierTests";
 			sourceTree = "<group>";
@@ -507,7 +513,7 @@
 				7C19DCCC22E4AD3A00708071 /* StationPickerView.swift in Sources */,
 				7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */,
 				7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */,
-				7C93649B2327260400E01D12 /* StorageService.swift in Sources */,
+				7C93649B2327260400E01D12 /* UserDefaultStorage.swift in Sources */,
 				7C3591F12300F4E200E2B19A /* UnzippingService.swift in Sources */,
 				4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */,
 				7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */,
@@ -550,6 +556,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C30BB3823287A1400EE77ED /* UserDefaultStorage.swift in Sources */,
+				7C30BB3D2328F93700EE77ED /* StationTests.swift in Sources */,
 				4794CB9322AA81950065091F /* Station_NotifierTests.swift in Sources */,
 				7C3456E022EE0B0B00B341B0 /* TripReducerTests.swift in Sources */,
 				7C3456E222EE29E200B341B0 /* Mocks.swift in Sources */,

@@ -18,3 +18,13 @@ class AppState: FluxState {
         transitSystemState = TransitSystemState()
     }
 }
+
+//extension AppState {
+//    private enum CodingKeys: String, CodingKey {
+//        
+//    }
+//    
+//    required init(from decoder: Decoder) throws {
+//        let container = decoder.container(keyedBy: <#T##CodingKey.Protocol#>)
+//    }
+//}
