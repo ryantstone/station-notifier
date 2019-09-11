@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import MapKit
 
-class StationState {
+class StationState: Codable {
     private (set) var stationList = [Station]()
     private var gtfsServiceCancellable: AnyCancellable!
     private (set) var transitSystem: TransitSystem? 
