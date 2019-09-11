@@ -55,6 +55,8 @@
 		7C9364942325D8A600E01D12 /* TransitFeedsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9364932325D8A600E01D12 /* TransitFeedsPicker.swift */; };
 		7C9364962325DE0F00E01D12 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9364952325DE0F00E01D12 /* Default-568h@2x.png */; };
 		7C9364992325DF3300E01D12 /* GTFS in Frameworks */ = {isa = PBXBuildFile; productRef = 7C9364982325DF3300E01D12 /* GTFS */; };
+		7C93649B2327260400E01D12 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93649A2327260400E01D12 /* StorageService.swift */; };
+		7C9364A02327300100E01D12 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93649F2327300100E01D12 /* Persistable.swift */; };
 		7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5022DC078F002E215F /* AppReducer.swift */; };
 		7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5222DC08A0002E215F /* LocationReducer.swift */; };
 		7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5422DC8183002E215F /* CreateStartStation.swift */; };
@@ -134,6 +136,8 @@
 		7C9364902325D6ED00E01D12 /* NetworkingActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingActions.swift; sourceTree = "<group>"; };
 		7C9364932325D8A600E01D12 /* TransitFeedsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitFeedsPicker.swift; sourceTree = "<group>"; };
 		7C9364952325DE0F00E01D12 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7C93649A2327260400E01D12 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		7C93649F2327300100E01D12 /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
 		7CAB9D5022DC078F002E215F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5222DC08A0002E215F /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5422DC8183002E215F /* CreateStartStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStartStation.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				7C3591B022FACE8400E2B19A /* DocumentsDirectoryWriterService.swift */,
 				7C3591EE2300F42A00E2B19A /* GTFSService.swift */,
 				7C3591F02300F4E200E2B19A /* UnzippingService.swift */,
+				7C93649A2327260400E01D12 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				7C37595523247050000B129E /* ConstantsProtocol.swift */,
+				7C93649F2327300100E01D12 /* Persistable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -501,6 +507,7 @@
 				7C19DCCC22E4AD3A00708071 /* StationPickerView.swift in Sources */,
 				7C43D43C22D5E819008AC918 /* ContentViewModel.swift in Sources */,
 				7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */,
+				7C93649B2327260400E01D12 /* StorageService.swift in Sources */,
 				7C3591F12300F4E200E2B19A /* UnzippingService.swift in Sources */,
 				4794CB7C22AA81930065091F /* AppDelegate.swift in Sources */,
 				7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */,
@@ -528,6 +535,7 @@
 				7C4CB5FD2314BD0800CAA3AA /* TransitSystemReducer.swift in Sources */,
 				4794CB8022AA81930065091F /* ContentView.swift in Sources */,
 				7C3591EF2300F42A00E2B19A /* GTFSService.swift in Sources */,
+				7C9364A02327300100E01D12 /* Persistable.swift in Sources */,
 				47A88E4B22DF40D5009E4CAF /* StationListCell.swift in Sources */,
 				7C93648D2325D58E00E01D12 /* API.swift in Sources */,
 				7C3591AC22F775FD00E2B19A /* TransitFeedsAPI.swift in Sources */,
