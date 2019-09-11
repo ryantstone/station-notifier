@@ -1,6 +1,7 @@
 import Foundation
 import MapKit
 import SwiftUI
+import CoreLocation
 
 struct Station: Hashable, Identifiable, CustomStringConvertible {
     var id: MKMapItem
@@ -17,17 +18,21 @@ struct Station: Hashable, Identifiable, CustomStringConvertible {
         self.name       = name
         self.location   = mapItem.placemark.location ?? CLLocation(latitude: mapItem.placemark.coordinate.latitude,
                                                                    longitude: mapItem.placemark.coordinate.longitude)
-        self.latitude   = mapItem.placemark.coordinate.longitude
-        self.longitude  = mapItem.placemark.coordinate.latitude
+        self.latitude   = mapItem.placemark.coordinate.latitude
+        self.longitude  = mapItem.placemark.coordinate.longitude
         self.id         = mapItem
     }
 }
 
 extension Station {
     init(name: String, latitude: Double, longitude: Double, location: CLLocation? = nil) {
-        self.mapItem    = MKMapItem()
         self.longitude  = CLLocationDegrees(exactly: longitude)!
         self.latitude   = CLLocationDegrees(exactly: latitude)!
+
+        let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let placeMark = MKPlacemark(coordinate: coordinates)
+        self.mapItem = MKMapItem(placemark: placeMark)
+
         self.name       = name
         self.id         = mapItem
         self.location   = location ?? CLLocation(latitude: latitude, longitude: longitude)
@@ -37,11 +42,9 @@ extension Station {
 extension Station: Equatable {
     static func ==(lhs: Station, rhs: Station) -> Bool {
         return
-            lhs.id == rhs.id &&
             lhs.name == rhs.name &&
             lhs.longitude == rhs.longitude &&
-            lhs.latitude == rhs.latitude &&
-            lhs.location == rhs.location
+            lhs.latitude == rhs.latitude
     }
 }
 
