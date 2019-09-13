@@ -11,15 +11,6 @@
         }
       },
       {
-        "package": "GTFS",
-        "repositoryURL": "https://github.com/ryantstone/GTFS",
-        "state": {
-          "branch": "feature/importer",
-          "revision": "be43e624b84ee85097245a2f3a878bcce27e518c",
-          "version": null
-        }
-      },
-      {
         "package": "SwiftUIFlux",
         "repositoryURL": "https://github.com/Dimillian/SwiftUIFlux",
         "state": {

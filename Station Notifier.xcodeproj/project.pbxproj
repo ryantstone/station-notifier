@@ -23,6 +23,7 @@
 		7C19DCD022E4F5BB00708071 /* TitledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C19DCCF22E4F5BB00708071 /* TitledButton.swift */; };
 		7C30BB3823287A1400EE77ED /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C30BB3723287A1400EE77ED /* UserDefaultStorage.swift */; };
 		7C30BB3D2328F93700EE77ED /* StationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C30BB3C2328F93700EE77ED /* StationTests.swift */; };
+		7C30BB412329CC9000EE77ED /* LocationStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C30BB402329CC9000EE77ED /* LocationStateTests.swift */; };
 		7C3456E222EE29E200B341B0 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E122EE29E200B341B0 /* Mocks.swift */; };
 		7C3456E422EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */; };
 		7C3456E622F056F200B341B0 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E522F056F200B341B0 /* PermissionManager.swift */; };
@@ -57,6 +58,7 @@
 		7C9364992325DF3300E01D12 /* GTFS in Frameworks */ = {isa = PBXBuildFile; productRef = 7C9364982325DF3300E01D12 /* GTFS */; };
 		7C93649B2327260400E01D12 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93649A2327260400E01D12 /* UserDefaultStorage.swift */; };
 		7C9364A02327300100E01D12 /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C93649F2327300100E01D12 /* Persistable.swift */; };
+		7CA07E99232B25E10072B7F3 /* TransitFeedsPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA07E98232B25E10072B7F3 /* TransitFeedsPickerViewModel.swift */; };
 		7CAB9D5122DC078F002E215F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5022DC078F002E215F /* AppReducer.swift */; };
 		7CAB9D5322DC08A0002E215F /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5222DC08A0002E215F /* LocationReducer.swift */; };
 		7CAB9D5522DC8183002E215F /* CreateStartStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB9D5422DC8183002E215F /* CreateStartStation.swift */; };
@@ -107,6 +109,7 @@
 		7C19DCCF22E4F5BB00708071 /* TitledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledButton.swift; sourceTree = "<group>"; };
 		7C30BB3723287A1400EE77ED /* UserDefaultStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultStorage.swift; path = "New Group/UserDefaultStorage.swift"; sourceTree = "<group>"; };
 		7C30BB3C2328F93700EE77ED /* StationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTests.swift; sourceTree = "<group>"; };
+		7C30BB402329CC9000EE77ED /* LocationStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStateTests.swift; sourceTree = "<group>"; };
 		7C3456E122EE29E200B341B0 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStringConvertibleExtension.swift; sourceTree = "<group>"; };
 		7C3456E522F056F200B341B0 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 		7C9364952325DE0F00E01D12 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7C93649A2327260400E01D12 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		7C93649F2327300100E01D12 /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
+		7CA07E97232A4C590072B7F3 /* GTFS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GTFS; path = ../../../../../System/Volumes/Data/Users/ryanstone/Documents/Development/GTFS; sourceTree = "<group>"; };
+		7CA07E98232B25E10072B7F3 /* TransitFeedsPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitFeedsPickerViewModel.swift; sourceTree = "<group>"; };
 		7CAB9D5022DC078F002E215F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5222DC08A0002E215F /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
 		7CAB9D5422DC8183002E215F /* CreateStartStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStartStation.swift; sourceTree = "<group>"; };
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				7C9364952325DE0F00E01D12 /* Default-568h@2x.png */,
+				7CA07E97232A4C590072B7F3 /* GTFS */,
 				4794CB7A22AA81930065091F /* Station Notifier */,
 				4794CB9122AA81950065091F /* Station NotifierTests */,
 				4794CB7922AA81930065091F /* Products */,
@@ -244,6 +250,7 @@
 		4794CB9122AA81950065091F /* Station NotifierTests */ = {
 			isa = PBXGroup;
 			children = (
+				7C30BB3E2329CC7600EE77ED /* Flux */,
 				7C30BB3723287A1400EE77ED /* UserDefaultStorage.swift */,
 				7C3456DE22EDC6C800B341B0 /* Reducers */,
 				4794CB9422AA81950065091F /* Info.plist */,
@@ -251,6 +258,22 @@
 				7C30BB3C2328F93700EE77ED /* StationTests.swift */,
 			);
 			path = "Station NotifierTests";
+			sourceTree = "<group>";
+		};
+		7C30BB3E2329CC7600EE77ED /* Flux */ = {
+			isa = PBXGroup;
+			children = (
+				7C30BB3F2329CC7E00EE77ED /* State */,
+			);
+			path = Flux;
+			sourceTree = "<group>";
+		};
+		7C30BB3F2329CC7E00EE77ED /* State */ = {
+			isa = PBXGroup;
+			children = (
+				7C30BB402329CC9000EE77ED /* LocationStateTests.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 		7C3456DE22EDC6C800B341B0 /* Reducers */ = {
@@ -373,6 +396,7 @@
 				7C19DCCB22E4AD3A00708071 /* StationPickerView.swift */,
 				7C4CB5FA2314BC2000CAA3AA /* TransitSystemPicker.swift */,
 				7C9364932325D8A600E01D12 /* TransitFeedsPicker.swift */,
+				7CA07E98232B25E10072B7F3 /* TransitFeedsPickerViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -520,6 +544,7 @@
 				7C93648F2325D6BF00E01D12 /* TransitSystemActions.swift in Sources */,
 				7C375958232492F8000B129E /* TransitFeedsResponse.swift in Sources */,
 				7CB6754922DEA99D0095E04B /* SearchField.swift in Sources */,
+				7CA07E99232B25E10072B7F3 /* TransitFeedsPickerViewModel.swift in Sources */,
 				7C45170222D95F210073E398 /* AppState.swift in Sources */,
 				7C45170422D95F430073E398 /* LocationState.swift in Sources */,
 				7C19DCD022E4F5BB00708071 /* TitledButton.swift in Sources */,
@@ -550,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C30BB412329CC9000EE77ED /* LocationStateTests.swift in Sources */,
 				7C30BB3823287A1400EE77ED /* UserDefaultStorage.swift in Sources */,
 				7C30BB3D2328F93700EE77ED /* StationTests.swift in Sources */,
 				7C3456E222EE29E200B341B0 /* Mocks.swift in Sources */,

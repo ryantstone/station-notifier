@@ -3,6 +3,6 @@ import Combine
 import SwiftUIFlux
 
 struct TransitSystemState: Codable {
-    var locations = Set<Location>()
+    var locations = [Location]()
 }
 

@@ -11,7 +11,11 @@ struct TransitSystemPicker: View {
         NavigationView {
             List(locations) { location in
                 HStack {
-                    NavigationLink(location.title, destination: TransitFeedsPicker(locationId: location.id)).navigationBarTitle("Services")
+                    NavigationLink(
+                        location.title,
+                        destination: TransitFeedsPicker(locationId: location.id)
+                            .environmentObject(TransitFeedsPickerViewModel(store: store, locationId: location.id))
+                    ).navigationBarTitle("Services")
                 }
             }.navigationBarTitle("Locations")
         }.onAppear { self.store.dispatch(action: GetLocationsAction()) }
