@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 import SwiftUIFlux
 
-class AppState: FluxState {
+class AppState: FluxState, Codable {
 
     var willChange = PassthroughSubject<Void, Never>()
 
@@ -16,6 +16,13 @@ class AppState: FluxState {
         stationState       = StationState()
         tripState          = TripState()
         transitSystemState = TransitSystemState()
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case stationState,
+        locationState,
+        tripState,
+        transitSystemState
     }
 }
 

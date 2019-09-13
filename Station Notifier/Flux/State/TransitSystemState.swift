@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import SwiftUIFlux
 
-struct TransitSystemState {
+struct TransitSystemState: Codable {
     var locations = Set<Location>()
 }
 
