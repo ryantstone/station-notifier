@@ -1,7 +1,7 @@
 import Foundation
 import CoreLocation
 
-class TripState {
+class TripState: Codable {
     var start: Station?
     var end: Station?
     var intermediateStations: [Station]?

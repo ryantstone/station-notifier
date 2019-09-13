@@ -11,9 +11,9 @@ struct GetLocationsAction: AsyncAction {
 
 // MARK: - Get Feeds
 struct GetFeedsAction: AsyncAction {
-    let location: Location
+    let locationId: Int
     
     func execute(state: FluxState?, dispatch: @escaping DispatchFunction) {
-        API.shared.transitFeedsAPI.getFeeds(location: location)
+        API.shared.transitFeedsAPI.getFeeds(locationId: locationId)
     }
 }
