@@ -6,11 +6,9 @@ func stationReducer(state: StationState, action: Action) -> StationState {
 
     switch action {
     case let action as AddStationsAction:
-        state.set(action.stations)
-    case let action as ReceiveGTFSURL:
-        state.set(action.url)
+        state.stationList = action.stations
     case let action as AddTransitSystem:
-        state.set(action.transitSystem)
+        state.transitSystem = action.transitSystem
     case let action as AddLocationAction:
         if let tripEndLocation = store.state.tripState.end?.location {
             if action.location.distance(from: tripEndLocation) <= 100 {

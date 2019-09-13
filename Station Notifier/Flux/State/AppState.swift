@@ -3,13 +3,10 @@ import Combine
 import SwiftUIFlux
 
 class AppState: FluxState, Codable {
-
-    var willChange = PassthroughSubject<Void, Never>()
-
-    var stationState: StationState      { didSet { willChange.send() } }
-    var locationState: LocationState    { didSet { willChange.send() } }
-    var tripState: TripState            { didSet { willChange.send() } }
-    var transitSystemState: TransitSystemState { didSet { willChange.send() }}
+    var stationState: StationState
+    var locationState: LocationState
+    var tripState: TripState
+    var transitSystemState: TransitSystemState
     
     init() {
         locationState      = LocationState()
@@ -25,13 +22,3 @@ class AppState: FluxState, Codable {
         transitSystemState
     }
 }
-
-//extension AppState {
-//    private enum CodingKeys: String, CodingKey {
-//        
-//    }
-//    
-//    required init(from decoder: Decoder) throws {
-//        let container = decoder.container(keyedBy: <#T##CodingKey.Protocol#>)
-//    }
-//}
