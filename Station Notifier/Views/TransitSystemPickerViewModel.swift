@@ -4,6 +4,7 @@ import Combine
 
 class TransitSystemPickerViewModel: ObservableObject {
     var cancellables = Set<AnyCancellable>()
+
     @Published var store: Store<AppState>
     @Published var locations = [Location]()
 

@@ -4,14 +4,8 @@ import SwiftUIFlux
 
 struct TransitFeedsPicker: View {
     
-    @EnvironmentObject private var viewModel: TransitFeedsPickerViewModel
+    @EnvironmentObject var viewModel: TransitFeedsPickerViewModel
 
-    init(viewModel: TransitFeedsPickerViewModel) {
-        _ = self.environmentObject(viewModel)
-//        self._viewModel =
-//        self.viewModel = viewModel
-    }
-    
     var body: some View {
         List(viewModel.feeds) { feed in
             HStack {

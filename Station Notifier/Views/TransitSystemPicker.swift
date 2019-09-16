@@ -8,24 +8,18 @@ struct TransitSystemPicker: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.$locations) { location in
+            List(viewModel.locations) { (location) in
                 HStack {
-                    NavigationLink(destination: destinationViewModel(locationId: location.id)) {
-                        Text("TEST")
-                    }
-//                    NavigationLink<Text, TransitFeedsPicker>(destination: destinationViewModel(locationId: location.id)) {
-//                        Text("TEST")
-//                    }.navigationBarTitle("Services")
+                    NavigationLink(
+                        location.name,
+                        destination: TransitFeedsPicker().environmentObject(TransitFeedsPickerViewModel(locationId: location.id))
+                    )
                 }
-            }.navigationBarTitle("Locations")
-        }.onAppear { self.store.dispatch(action: GetLocationsAction()) }
+            }
+        }.navigationBarTitle("Systems")
+        .onAppear { store.dispatch(action: GetLocationsAction()) }
     }
-    
-    func destinationViewModel(locationId: Int) -> TransitFeedsPicker {
-        let vm = TransitFeedsPickerViewModel(locationId: locationId)
-        return TransitFeedsPicker(viewModel: vm)
-    }
-    
+
     func dispatch(location: Location) {
         store.dispatch(action: GetFeedsAction(locationId: location.id))
     }
