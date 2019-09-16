@@ -10,6 +10,6 @@ struct SetLocationsAction: Action {
 }
 
 struct SetFeedsAction: Action {
-    let location: Location
+    let locationID: Int
     let feeds: [Feed]
 }

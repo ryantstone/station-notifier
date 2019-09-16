@@ -6,6 +6,12 @@ struct TransitFeedsPicker: View {
     
     @EnvironmentObject private var viewModel: TransitFeedsPickerViewModel
 
+    init(viewModel: TransitFeedsPickerViewModel) {
+        _ = self.environmentObject(viewModel)
+//        self._viewModel =
+//        self.viewModel = viewModel
+    }
+    
     var body: some View {
         List(viewModel.feeds) { feed in
             HStack {
@@ -16,7 +22,7 @@ struct TransitFeedsPicker: View {
     }
     
     func getFeeds(for locationId: Int) {
-        self.viewModel.store.dispatch(action: GetFeedsAction(location: location))
+        self.viewModel.store.dispatch(action: GetFeedsAction(locationId: locationId))
     }
 }
 

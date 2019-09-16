@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 let store = Store<AppState>(reducer: appStateReducer,
                                  middleware: [],
                                  state: AppState())
-
+var globalStore: Store<AppState> { return store }
 #if DEBUG
 let sampleStore = Store<AppState>(reducer: appStateReducer,
                                   middleware: [],

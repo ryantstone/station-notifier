@@ -19,7 +19,7 @@ class TransitFeedsAPI {
 
     // MARK: - Get Feeds
     func getFeeds(locationId: Int) {
-        let item = URLQueryItem(name: "location", value: String(describing: location.id))
+        let item = URLQueryItem(name: "location", value: String(describing: locationId))
         guard let url = buildURLComponents(path: .getFeeds, queryItems: [item]) else { return }
         
         makeRequest(TransitFeedsResponse<GetFeedsResults>.self, url: url)
@@ -28,7 +28,7 @@ class TransitFeedsAPI {
             }, receiveValue: { results in
                 results.results?.feeds.flatMap { feeds in
                     let filteredFeeds = feeds.filter { $0.type == .gtfsStatic }
-                    store.dispatch(action: SetFeedsAction(location: location, feeds: filteredFeeds))
+                    store.dispatch(action: SetFeedsAction(locationID: locationId, feeds: filteredFeeds))
                 }
             }).store(in: &cancellables)
     }
