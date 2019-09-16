@@ -4,31 +4,28 @@ import SwiftUIFlux
 
 struct TransitSystemPicker: View {
     
-    @EnvironmentObject private var store: Store<AppState>
-    var locations: [Location] { return Array(store.state.transitSystemState.locations) }
-    
+    @EnvironmentObject var viewModel: TransitSystemPickerViewModel
+
     var body: some View {
         NavigationView {
-            List(locations) { location in
+            List(viewModel.$locations) { location in
                 HStack {
-                    NavigationLink(
+                    NavigationLink<Text, TransitFeedsPicker>(
                         location.title,
-                        destination: TransitFeedsPicker(locationId: location.id)
-                            .environmentObject(TransitFeedsPickerViewModel(store: store, locationId: location.id))
+                        destination: TransitFeedsPicker()
+                            .environmentObject(self.transitFeedsViewModel(locationID: location.id))
                     ).navigationBarTitle("Services")
                 }
             }.navigationBarTitle("Locations")
         }.onAppear { self.store.dispatch(action: GetLocationsAction()) }
     }
-    
-    func wrappedLocations() -> [IdentifiableWrapper<Location>] {
-        return locations
-            .sorted { $0.title < $1.title }
-            .map { IdentifiableWrapper(wrapped: $0)}
+
+    func transitFeedsViewModel(locationID: Int) -> TransitFeedsPickerViewModel {
+        return TransitFeedsPickerViewModel(store: viewModel.store, locationId: locationID)
     }
-    
+
     func dispatch(location: Location) {
-        store.dispatch(action: GetFeedsAction(location: location))
+        store.dispatch(action: GetFeedsAction(locationId: location.id))
     }
 }
 

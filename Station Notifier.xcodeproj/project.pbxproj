@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4726232D232C45BB00C056C0 /* TransitSystemPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4726232C232C45BB00C056C0 /* TransitSystemPickerViewModel.swift */; };
 		4742F61022DFC94F00863C6E /* StationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742F60F22DFC94F00863C6E /* StationState.swift */; };
 		4742F61322DFCA1E00863C6E /* StationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742F61222DFCA1E00863C6E /* StationActions.swift */; };
 		4742F61522DFCA8600863C6E /* StationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742F61422DFCA8600863C6E /* StationReducer.swift */; };
@@ -89,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4726232C232C45BB00C056C0 /* TransitSystemPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitSystemPickerViewModel.swift; sourceTree = "<group>"; };
 		4742F60F22DFC94F00863C6E /* StationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationState.swift; sourceTree = "<group>"; };
 		4742F61222DFCA1E00863C6E /* StationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationActions.swift; sourceTree = "<group>"; };
 		4742F61422DFCA8600863C6E /* StationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationReducer.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				7C4CB5FA2314BC2000CAA3AA /* TransitSystemPicker.swift */,
 				7C9364932325D8A600E01D12 /* TransitFeedsPicker.swift */,
 				7CA07E98232B25E10072B7F3 /* TransitFeedsPickerViewModel.swift */,
+				4726232C232C45BB00C056C0 /* TransitSystemPickerViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				7C19DCD022E4F5BB00708071 /* TitledButton.swift in Sources */,
 				4791937E22AA854C00EA30E4 /* LocationManager.swift in Sources */,
 				7C7EB57F22E48E9300AF7418 /* Station.swift in Sources */,
+				4726232D232C45BB00C056C0 /* TransitSystemPickerViewModel.swift in Sources */,
 				7C69DFE722E7E53100240313 /* TripReducer.swift in Sources */,
 				7C3591D022FBABF100E2B19A /* TransitSystem.swift in Sources */,
 				7C69DFE522E7E4B900240313 /* TripActions.swift in Sources */,
