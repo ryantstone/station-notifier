@@ -54,7 +54,6 @@ class TransitFeedsAPI {
                 print(error)
             }) { (system) in
                 store.dispatch(action: AddTransitSystemAction(system: system))
-                print(store.state.transitSystemState.transitSystems[feed.id])
         }.store(in: &cancellables)
     }
     

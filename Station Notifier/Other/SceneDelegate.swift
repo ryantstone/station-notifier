@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 let store = Store<AppState>(reducer: appStateReducer,
-                                 middleware: [],
+                                 middleware: [loggingMiddleware],
                                  state: AppState())
 var globalStore: Store<AppState> { return store }
 #if DEBUG

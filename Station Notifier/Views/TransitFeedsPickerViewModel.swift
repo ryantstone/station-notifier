@@ -31,6 +31,8 @@ class TransitFeedsPickerViewModel: ObservableObject {
     }
     
     func makeAPICalls() {
+        guard feeds.isEmpty else { return }
+        
         API.shared.transitFeedsAPI.getFeeds(locationId: locationId)
     }
     
