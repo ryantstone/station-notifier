@@ -17,9 +17,11 @@ struct TransitSystem: Codable {
     var frequencies = Set<Frequencies>()
     var transfers = Set<Transfer>()
     var fareRules = Set<FareRules>()
+    let feedId: Int
 
-    init(urls: [URL]) {
+    init(urls: [URL], feedId: Int) {
         self.urls = urls
+        self.feedId = feedId
         buildProperties()
         joinProperties()
     }

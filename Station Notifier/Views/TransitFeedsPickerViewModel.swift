@@ -33,4 +33,8 @@ class TransitFeedsPickerViewModel: ObservableObject {
     func makeAPICalls() {
         API.shared.transitFeedsAPI.getFeeds(locationId: locationId)
     }
+    
+    func didTapFeed(_ feed: Feed) {
+        API.shared.transitFeedsAPI.getGTFS(feed: feed)
+    }
 }

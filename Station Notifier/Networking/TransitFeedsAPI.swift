@@ -46,6 +46,18 @@ class TransitFeedsAPI {
             .store(in: &cancellables)
     }
     
+    // MARK: - Download GTFS
+    func getGTFS(feed: Feed) {
+        GTFSService(feed: feed)
+            .getTransitData()
+            .sink(receiveCompletion: { (error) in
+                print(error)
+            }) { (system) in
+                store.dispatch(action: AddTransitSystemAction(system: system))
+                print(store.state.transitSystemState.transitSystems[feed.id])
+        }.store(in: &cancellables)
+    }
+    
     // MARK: - Private Functions
     private func makeRequest<T: Codable>(_ type: T.Type, url: URL) -> AnyPublisher<T, APIError> {
         return api.getData(url)

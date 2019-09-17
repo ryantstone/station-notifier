@@ -13,3 +13,7 @@ struct SetFeedsAction: Action {
     let locationID: Int
     let feeds: [Feed]
 }
+
+struct AddTransitSystemAction: Action {
+    let system: TransitSystem
+}

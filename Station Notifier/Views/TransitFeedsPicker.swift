@@ -9,14 +9,12 @@ struct TransitFeedsPicker: View {
     var body: some View {
         List(viewModel.feeds) { feed in
             HStack {
-                Text(feed.title)
+                Text(feed.title).onTapGesture {
+                    self.viewModel.didTapFeed(feed)
+                }
             }
         }.onAppear { self.viewModel.start() }
          .navigationBarTitle("Feeds")
-    }
-    
-    func getFeeds(for locationId: Int) {
-        self.viewModel.store.dispatch(action: GetFeedsAction(locationId: locationId))
     }
 }
 
