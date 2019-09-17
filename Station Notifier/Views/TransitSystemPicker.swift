@@ -12,16 +12,17 @@ struct TransitSystemPicker: View {
                 HStack {
                     NavigationLink(
                         location.name,
-                        destination: TransitFeedsPicker().environmentObject(TransitFeedsPickerViewModel(locationId: location.id))
+                        destination: TransitFeedsPicker()
+                            .environmentObject(
+                                TransitFeedsPickerViewModel(
+                                    store: self.viewModel.store,
+                                    locationId: location.id
+                            )
+                        )
                     )
                 }
             }
         }.navigationBarTitle("Systems")
-        .onAppear { store.dispatch(action: GetLocationsAction()) }
-    }
-
-    func dispatch(location: Location) {
-        store.dispatch(action: GetFeedsAction(locationId: location.id))
     }
 }
 

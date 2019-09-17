@@ -11,7 +11,7 @@ struct TransitFeedsPicker: View {
             HStack {
                 Text(feed.title)
             }
-        }.onAppear { self.getFeeds(for: self.viewModel.locationId) }
+        }.onAppear { self.viewModel.start() }
          .navigationBarTitle("Feeds")
     }
     

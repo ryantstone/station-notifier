@@ -12,15 +12,21 @@ class TransitSystemPickerViewModel: ObservableObject {
         self.store = store
 
         setupSubscribers()
+        makeAPICalls()
     }
 
     func setupSubscribers() {
-        _ = store.$state
+        store.$state
             .map({ state in state.transitSystemState.locations })
             .map({ locations in
                 return locations.sorted(by: { $0.title < $1.title })
             })
             .assign(to: \.locations, on: self)
+            .store(in: &cancellables)
 
+    }
+    
+    func makeAPICalls() {
+        API.shared.transitFeedsAPI.getLocations()
     }
 }
