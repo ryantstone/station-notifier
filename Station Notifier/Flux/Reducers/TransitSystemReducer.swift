@@ -6,11 +6,15 @@ func transitSystemReducer(state: TransitSystemState, action: Action) -> TransitS
 
     switch action {
     case let action as SetLocationsAction:
-        state.locations = Set(action.locations)
+        state.locations = action.locations
     case let action as SetFeedsAction:
-        guard var location = state.locations.first(where: { $0.id == action.location.id }) else { break }
-        action.feeds.forEach { location.feeds.insert($0) }
-        state.locations.insert(location)
+        guard let locationIndex = state.locations.firstIndex(where: { $0.id == action.locationID }) else { break }
+        action.feeds.forEach { state.locations[locationIndex].feeds.append($0) }
+    case let action as AddTransitSystemAction:
+        let id = action.system.feedId
+        var transitSystems = state.transitSystems[id] ?? []
+        transitSystems.append(action.system)
+        state.transitSystems[id] = transitSystems
     default:
         break
     }

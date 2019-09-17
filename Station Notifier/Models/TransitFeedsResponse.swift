@@ -14,14 +14,14 @@ struct GetLocationsResults: Codable {
 }
 
 // MARK: - Location
-struct Location: Codable, Equatable, Hashable {
+struct Location: Codable, Equatable, Hashable, Identifiable {
     let id: Int
     let pid: Int
     let title: String
     let name: String
     let lattitude: Double
     let longitude: Double
-    var feeds = Set<Feed>()
+    var feeds = [Feed]()
     
     private enum CodingKeys: String, CodingKey {
         case id,
@@ -44,14 +44,14 @@ struct GetFeedsResults: Codable {
     let feeds: [Feed]?
 }
 
-struct Feed: Codable, Equatable, Hashable {
-//    enum FeedType: String, Codable {
-//        case gtfsStatic = "gtfs"
-//        case realtime = "gtfsrealtime"
-//    }
+struct Feed: Codable, Equatable, Hashable, Identifiable {
+    enum FeedType: String, Codable {
+        case gtfsStatic = "gtfs"
+        case realtime = "gtfsrealtime"
+    }
 
     let id: String
-    let type: String?
+    let type: GTFSType?
     let title: String
     let location: Location
     let url: URLWrapper?
@@ -67,6 +67,12 @@ struct Feed: Codable, Equatable, Hashable {
         latest      = "latest"
     }
 
+    enum GTFSType: String, Codable {
+        case
+        gtfsStatic = "gtfs",
+        realTime = "gtfsrealtime"
+    }
+    
     struct URLWrapper: Codable, Equatable, Hashable {
         let feedInformation: String?
         let feedURL: String?

@@ -2,19 +2,23 @@ import SwiftUI
 import Combine
 import SwiftUIFlux
 
-class AppState: FluxState {
-
-    var willChange = PassthroughSubject<Void, Never>()
-
-    var stationState: StationState      { didSet { willChange.send() } }
-    var locationState: LocationState    { didSet { willChange.send() } }
-    var tripState: TripState            { didSet { willChange.send() } }
-    var transitSystemState: TransitSystemState { didSet { willChange.send() }}
+class AppState: FluxState, Codable {
+    var stationState: StationState
+    var locationState: LocationState
+    var tripState: TripState
+    var transitSystemState: TransitSystemState
     
     init() {
         locationState      = LocationState()
         stationState       = StationState()
         tripState          = TripState()
         transitSystemState = TransitSystemState()
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case stationState,
+        locationState,
+        tripState,
+        transitSystemState
     }
 }

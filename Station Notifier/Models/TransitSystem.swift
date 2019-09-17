@@ -1,7 +1,7 @@
 import GTFS
 import Foundation
 
-struct TransitSystem {
+struct TransitSystem: Codable {
     
     private let urls: [URL]
     var agency = Set<Agency>()
@@ -17,15 +17,16 @@ struct TransitSystem {
     var frequencies = Set<Frequencies>()
     var transfers = Set<Transfer>()
     var fareRules = Set<FareRules>()
+    let feedId: String
 
-    init(urls: [URL]) {
+    init(urls: [URL], feedId: String) {
         self.urls = urls
+        self.feedId = feedId
         buildProperties()
         joinProperties()
     }
 
     private mutating func buildProperties() {
-
         filterAndBuild(name: .agency, type: Agency.self)
             .flatMap { agency.append(contentsOf: $0) }
 
@@ -166,5 +167,22 @@ struct TransitSystem {
         routes = "routes",
         frequencies = "frequencies",
         transfers = "transfers"
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case urls,
+        agency,
+        calendarDates,
+        stopTimes,
+        trips,
+        stops,
+        calendar,
+        routes,
+        shapes,
+        fareAttributes,
+        frequencies,
+        transfers,
+        fareRules,
+        feedId
     }
 }

@@ -1,19 +1,15 @@
 import Foundation
 import Combine
 
-class API {
-    static let shared = API()
-
-    let transitFeedsAPI = TransitFeedsAPI(baseAPI: BaseAPI())
-}
-
+// MARK: - TransitFeedsAPI
 class TransitFeedsAPI {
     let api: BaseAPI
     let baseUrl = "https://api.transitfeeds.com/v1"
     var cancellables = Set<AnyCancellable>()
 
     enum Path: String {
-        case getLocations = "/getLocations",
+        case
+        getLocations = "/getLocations",
         getFeeds = "/getFeeds"
     }
     
@@ -22,8 +18,8 @@ class TransitFeedsAPI {
     }
 
     // MARK: - Get Feeds
-    func getFeeds(location: Location) {
-        let item = URLQueryItem(name: "location", value: String(describing: location.id))
+    func getFeeds(locationId: Int) {
+        let item = URLQueryItem(name: "location", value: String(describing: locationId))
         guard let url = buildURLComponents(path: .getFeeds, queryItems: [item]) else { return }
         
         makeRequest(TransitFeedsResponse<GetFeedsResults>.self, url: url)
@@ -31,7 +27,8 @@ class TransitFeedsAPI {
                 print(error)
             }, receiveValue: { results in
                 results.results?.feeds.flatMap { feeds in
-                    store.dispatch(action: SetFeedsAction(location: location, feeds: feeds))
+                    let filteredFeeds = feeds.filter { $0.type == .gtfsStatic }
+                    store.dispatch(action: SetFeedsAction(locationID: locationId, feeds: filteredFeeds))
                 }
             }).store(in: &cancellables)
     }
@@ -47,6 +44,17 @@ class TransitFeedsAPI {
                     store.dispatch(action: SetLocationsAction(locations: locations))
             })
             .store(in: &cancellables)
+    }
+    
+    // MARK: - Download GTFS
+    func getGTFS(feed: Feed) {
+        GTFSService(feed: feed)
+            .getTransitData()
+            .sink(receiveCompletion: { (error) in
+                print(error)
+            }) { (system) in
+                store.dispatch(action: AddTransitSystemAction(system: system))
+        }.store(in: &cancellables)
     }
     
     // MARK: - Private Functions
@@ -68,33 +76,3 @@ class TransitFeedsAPI {
             }).flatMap({ $0.url })
     }
 }
-
-class BaseAPI {
-    func getData(_ url: URL) -> AnyPublisher<Data, APIError> {
-        return URLSession
-            .shared
-            .dataTaskPublisher(for: url)
-            .map { $0.data }
-            .mapError { APIError.apiError(reason: $0.localizedDescription) }
-            .eraseToAnyPublisher()
-    }
-}
-
-// MARK: -  API Error
-enum APIError: Error, LocalizedError {
-    case unknown,
-    invalidUrl(String),
-    apiError(reason: String)
-
-    var errorDescription: String? {
-        switch self {
-        case .unknown:
-            return "Unknown error"
-        case .invalidUrl(let url):
-            return "Invalid URL: \(url)"
-        case .apiError(let reason):
-            return reason
-        }
-    }
-}
-

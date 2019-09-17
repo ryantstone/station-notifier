@@ -10,7 +10,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
             let window                  = UIWindow(windowScene: windowScene)
-            window.rootViewController   = UIHostingController(rootView: TransitSystemPicker().environmentObject(store))
+            window.rootViewController   = UIHostingController(rootView: TransitSystemPicker().environmentObject(TransitSystemPickerViewModel(store: store)))
             self.window                 = window
             
             locationManager = LocationManager(store: store)
@@ -28,9 +28,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 let store = Store<AppState>(reducer: appStateReducer,
-                                 middleware: [],
+                                 middleware: [loggingMiddleware],
                                  state: AppState())
-
+var globalStore: Store<AppState> { return store }
 #if DEBUG
 let sampleStore = Store<AppState>(reducer: appStateReducer,
                                   middleware: [],

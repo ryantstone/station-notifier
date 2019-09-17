@@ -2,23 +2,46 @@ import Foundation
 import Combine
 import CoreLocation
 
-class LocationState {
+struct LocationState: Equatable {
     
     private (set) var location: CLLocation = CLLocation()
-    private (set) var latitude: CLLocationDegrees   = CLLocationDegrees()
-    private (set) var longitude: CLLocationDegrees  = CLLocationDegrees()
-    private (set) var timeStamp: Date               = Date()
-    private (set) var speed: CLLocationSpeed        = CLLocationSpeed()
-    private (set) var course: CLLocationDirection   = CLLocationDirection()
+    
+    var longitude: CLLocationDegrees { location.coordinate.longitude }
+    var latitude: CLLocationDegrees { location.coordinate.latitude }
+    var timeStamp: Date { location.timestamp }
+    var speed: CLLocationSpeed { location.speed }
+    var course: CLLocationDirection { location.course }
 
-    func add(location: CLLocation) {
+    mutating func add(location: CLLocation) {
         self.location   = location
-        self.latitude   = location.coordinate.latitude
-        self.longitude  = location.coordinate.longitude
-        self.timeStamp  = location.timestamp
-        self.speed      = location.speed
-        self.course     = location.course
     }
 }
 
+extension LocationState: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case location
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        guard let location = { try? container.decode(Data.self, forKey: .location) }()
+            .flatMap({ data in try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? CLLocation }) else {
+
+            throw DecodingError.typeMismatch(Data.self, DecodingError.Context(codingPath: [CodingKeys.location], debugDescription: "Failed to save location"))
+        }
+
+        self.location = location
+    }
+}
+
+extension LocationState: Encodable {
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        let locationData = try NSKeyedArchiver.archivedData(withRootObject: location, requiringSecureCoding: false)
+        
+        try container.encode(locationData, forKey: .location)
+    }
+}
 
