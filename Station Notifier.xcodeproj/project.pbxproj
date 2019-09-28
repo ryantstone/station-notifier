@@ -25,6 +25,7 @@
 		7C30BB3823287A1400EE77ED /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C30BB3723287A1400EE77ED /* UserDefaultStorage.swift */; };
 		7C30BB3D2328F93700EE77ED /* StationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C30BB3C2328F93700EE77ED /* StationTests.swift */; };
 		7C30BB412329CC9000EE77ED /* LocationStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C30BB402329CC9000EE77ED /* LocationStateTests.swift */; };
+		7C3301DC233CBF2A001CC8A2 /* AppDelegateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3301DB233CBF2A001CC8A2 /* AppDelegateService.swift */; };
 		7C3456E222EE29E200B341B0 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E122EE29E200B341B0 /* Mocks.swift */; };
 		7C3456E422EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */; };
 		7C3456E622F056F200B341B0 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3456E522F056F200B341B0 /* PermissionManager.swift */; };
@@ -112,6 +113,7 @@
 		7C30BB3723287A1400EE77ED /* UserDefaultStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultStorage.swift; path = "New Group/UserDefaultStorage.swift"; sourceTree = "<group>"; };
 		7C30BB3C2328F93700EE77ED /* StationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTests.swift; sourceTree = "<group>"; };
 		7C30BB402329CC9000EE77ED /* LocationStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStateTests.swift; sourceTree = "<group>"; };
+		7C3301DB233CBF2A001CC8A2 /* AppDelegateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateService.swift; sourceTree = "<group>"; };
 		7C3456E122EE29E200B341B0 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		7C3456E322EE7B4F00B341B0 /* CustomStringConvertibleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStringConvertibleExtension.swift; sourceTree = "<group>"; };
 		7C3456E522F056F200B341B0 /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				7C3591EE2300F42A00E2B19A /* GTFSService.swift */,
 				7C3591F02300F4E200E2B19A /* UnzippingService.swift */,
 				7C93649A2327260400E01D12 /* UserDefaultStorage.swift */,
+				7C3301DB233CBF2A001CC8A2 /* AppDelegateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				7C3456E622F056F200B341B0 /* PermissionManager.swift in Sources */,
 				7C37595623247050000B129E /* ConstantsProtocol.swift in Sources */,
 				7C4CB5FD2314BD0800CAA3AA /* TransitSystemReducer.swift in Sources */,
+				7C3301DC233CBF2A001CC8A2 /* AppDelegateService.swift in Sources */,
 				4794CB8022AA81930065091F /* ContentView.swift in Sources */,
 				7C3591EF2300F42A00E2B19A /* GTFSService.swift in Sources */,
 				7C9364A02327300100E01D12 /* Persistable.swift in Sources */,
