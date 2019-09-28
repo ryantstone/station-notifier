@@ -22,14 +22,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func sceneDidDisconnect(_ scene: UIScene) { }
     func sceneDidBecomeActive(_ scene: UIScene) { }
-    func sceneWillResignActive(_ scene: UIScene) { }
-    func sceneWillEnterForeground(_ scene: UIScene) { }
-    func sceneDidEnterBackground(_ scene: UIScene) { }
+    
+    func sceneWillResignActive(_ scene: UIScene) {
+        appDelegateService.saveState()
+    }
+    
+    func sceneWillEnterForeground(_ scene: UIScene) {
+        appDelegateService.getState()
+            .flatMap { store.state = $0 }
+    }
+    func sceneDidEnterBackground(_ scene: UIScene) {
+        appDelegateService.saveState()
+    }
 }
+private let appDelegateService = AppDelegateService()
 
 let store = Store<AppState>(reducer: appStateReducer,
                                  middleware: [loggingMiddleware],
-                                 state: AppState())
+                                 state: appDelegateService.getState() ??  AppState())
+
 var globalStore: Store<AppState> { return store }
 #if DEBUG
 let sampleStore = Store<AppState>(reducer: appStateReducer,
